@@ -130,7 +130,7 @@ function MyApp({ Component, pageProps }) {
           </button>
         </div>
       )}
-      {Browser !== "iOS" && Browser !== "Andriod" && (
+      {Browser !== "iOS" && Browser !== "Andriod" && Browser !== "unknown" && (
         <Component {...pageProps} />
       )}
     </div>
