@@ -22,15 +22,12 @@ function MyApp({ Component, pageProps }) {
     function getMobileOperatingSystem() {
       let userAgent = navigator.userAgent || navigator.vendor || window.opera;
       if (/windows phone/i.test(userAgent)) {
-        // return "Windows Phone";
       }
       if (/android/i.test(userAgent)) {
         setBrowser("Android");
-        // return "Android";
       }
       if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
         setBrowser("iOS");
-        // return "iOS";
       }
       return "unknown";
     }
@@ -40,20 +37,18 @@ function MyApp({ Component, pageProps }) {
   return (
     <div
       className="overflow-x-hidden"
-      // style={{ zIndex: 0 }}
       style={{ fontFamily: "Poppins,serif" }}
     >
       {Browser == "iOS" && (
         <div className="flex items-center justify-center my-12 flex-col">
-          {/* <Image src="/a.webp" height={2} width={2} /> */}
           <FeaturedBackground1 />
           <Image src="/logo.png" height={200} width={200} />
           <div className="flex">
-            <AiFillStar className="text-amber-400" />
-            <AiFillStar className="text-amber-400" />
-            <AiFillStar className="text-amber-400" />
-            <AiFillStar className="text-amber-400" />
-            <AiFillStar className="text-amber-400" />
+            <AiFillStar className="text-amber-400 text-lg" />
+            <AiFillStar className="text-amber-400 text-lg" />
+            <AiFillStar className="text-amber-400 text-lg" />
+            <AiFillStar className="text-amber-400 text-lg" />
+            <AiFillStar className="text-amber-400 text-lg" />
           </div>
           <p className="text-gray-400 text-xs my-4">
             5 stars from 2.9M ratings
@@ -68,7 +63,7 @@ function MyApp({ Component, pageProps }) {
           </Link>
           <button
             onClick={() => setBrowser("")}
-            className=" px-8 py-2 hover:border-black border-b-2 border-transparent  my-1"
+            className="px-8 py-2 hover:border-black border-b-2 border-transparent  my-1"
           >
             Continue in browser
           </button>
@@ -76,15 +71,14 @@ function MyApp({ Component, pageProps }) {
       )}
       {Browser == "Android" && (
         <div className="flex items-center justify-center my-12 flex-col">
-          {/* <Image src="/a.webp" height={2} width={2} /> */}
           <FeaturedBackground1 />
           <Image src="/logo.png" height={200} width={200} />
           <div className="flex">
-            <AiFillStar className="text-amber-400" />
-            <AiFillStar className="text-amber-400" />
-            <AiFillStar className="text-amber-400" />
-            <AiFillStar className="text-amber-400" />
-            <AiFillStar className="text-amber-400" />
+            <AiFillStar className="text-amber-400 text-lg" />
+            <AiFillStar className="text-amber-400 text-lg" />
+            <AiFillStar className="text-amber-400 text-lg" />
+            <AiFillStar className="text-amber-400 text-lg" />
+            <AiFillStar className="text-amber-400 text-lg" />
           </div>
           <p className="text-gray-400 text-xs my-4">
             5 stars from 2.9M ratings
@@ -115,28 +109,3 @@ function MyApp({ Component, pageProps }) {
 
 export default MyApp;
 
-// useEffect(() => {
-//   function detectBrowser() {
-//     let userAgent = navigator.userAgent;
-//     let browserName;
-//     if (userAgent.match(/chrome|chromium|crios/i)) {
-//       browserName = "Chrome";
-//     } else if (userAgent.match(/firefox|fxios/i)) {
-//       browserName = "Firefox";
-//     } else if (userAgent.match(/safari/i)) {
-//       browserName = "Safari";
-//     } else if (userAgent.match(/opr\//i)) {
-//       browserName = "Opera";
-//     } else if (userAgent.match(/edg/i)) {
-//       browserName = "Edge";
-//     } else if (userAgent.match(/android/i)) {
-//       browserName = "Android";
-//     } else if (userAgent.match(/iphone/i)) {
-//       browserName = "iPhone";
-//     } else {
-//       browserName = "Unknown";
-//     }
-//     setBrowser(browserName);
-//   }
-//   // detectBrowser();
-// }, []);
