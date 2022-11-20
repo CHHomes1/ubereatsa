@@ -113,7 +113,7 @@ const NavDrawer = () => {
         <React.Fragment key={anchor}>
           <button
             onClick={toggleDrawer(anchor, true)}
-            className="p-2 rounded-xl mx-4 my-1"
+            className="p-2 rounded-xl mr-4 my-1"
           >
             {
               <svg

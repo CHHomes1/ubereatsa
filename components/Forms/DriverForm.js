@@ -4,7 +4,7 @@ const style = {
   wrapper: "flex flex-col bg-amber-400",
   singleInputContainer: "flex flex-col items-start my-2",
   input: "outline-none w-[95%] md:w-[80%] px-3 py-2 md:px-5 md:py-2 rounded placeholder:italic placeholder:text-xs",
-  btn: "bg-black px-3 py-2 md:px-5 md:py-2 text-white max-w-fit my-4 mx-auto",
+  btn: "bg-black px-3 py-2 md:px-5 md:py-2 text-white  my-4  w-[95%] md:w-[80%]  hover:opacity-[0.85]",
 };
 const DriverForm = () => {
   const [FirstName, setFirstName] = useState("");
