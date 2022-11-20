@@ -17,44 +17,20 @@ function MyApp({ Component, pageProps }) {
     margin: 10px 0 10px 0;
   `;
   const [Browser, setBrowser] = useState("");
-  useEffect(() => {
-    function detectBrowser() {
-      let userAgent = navigator.userAgent;
-      let browserName;
-      if (userAgent.match(/chrome|chromium|crios/i)) {
-        browserName = "Chrome";
-      } else if (userAgent.match(/firefox|fxios/i)) {
-        browserName = "Firefox";
-      } else if (userAgent.match(/safari/i)) {
-        browserName = "Safari";
-      } else if (userAgent.match(/opr\//i)) {
-        browserName = "Opera";
-      } else if (userAgent.match(/edg/i)) {
-        browserName = "Edge";
-      } else if (userAgent.match(/android/i)) {
-        browserName = "Android";
-      } else if (userAgent.match(/iphone/i)) {
-        browserName = "iPhone";
-      } else {
-        browserName = "Unknown";
-      }
-      setBrowser(browserName);
-    }
-    // detectBrowser();
-  }, []);
+ 
   useEffect(() => {
     function getMobileOperatingSystem() {
       let userAgent = navigator.userAgent || navigator.vendor || window.opera;
       if (/windows phone/i.test(userAgent)) {
-        return "Windows Phone";
+        // return "Windows Phone";
       }
       if (/android/i.test(userAgent)) {
         setBrowser("Android");
-        return "Android";
+        // return "Android";
       }
       if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
         setBrowser("iOS");
-        return "iOS";
+        // return "iOS";
       }
       return "unknown";
     }
@@ -130,7 +106,7 @@ function MyApp({ Component, pageProps }) {
           </button>
         </div>
       )}
-      {Browser !== "iOS" && Browser !== "Andriod" && Browser !== "unknown" && (
+      {Browser !== "iOS" && Browser !== "Android" && Browser !== "unknown" && (
         <Component {...pageProps} />
       )}
     </div>
@@ -138,3 +114,29 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default MyApp;
+
+// useEffect(() => {
+//   function detectBrowser() {
+//     let userAgent = navigator.userAgent;
+//     let browserName;
+//     if (userAgent.match(/chrome|chromium|crios/i)) {
+//       browserName = "Chrome";
+//     } else if (userAgent.match(/firefox|fxios/i)) {
+//       browserName = "Firefox";
+//     } else if (userAgent.match(/safari/i)) {
+//       browserName = "Safari";
+//     } else if (userAgent.match(/opr\//i)) {
+//       browserName = "Opera";
+//     } else if (userAgent.match(/edg/i)) {
+//       browserName = "Edge";
+//     } else if (userAgent.match(/android/i)) {
+//       browserName = "Android";
+//     } else if (userAgent.match(/iphone/i)) {
+//       browserName = "iPhone";
+//     } else {
+//       browserName = "Unknown";
+//     }
+//     setBrowser(browserName);
+//   }
+//   // detectBrowser();
+// }, []);
