@@ -48,7 +48,7 @@ function MyApp({ Component, pageProps }) {
       // style={{ zIndex: 0 }}
       style={{ fontFamily: "Poppins,serif" }}
     >
-      {Browser == "Safari" && (
+      {Browser == "iPhone" && (
         <div className="flex items-center justify-center my-12 flex-col">
           {/* <Image src="/a.webp" height={2} width={2} /> */}
           <FeaturedBackground1 />
@@ -111,7 +111,7 @@ function MyApp({ Component, pageProps }) {
           </button>
         </div>
       )}
-      {Browser !== "Safari" && Browser !== "Andriod" && (
+      {Browser !== "iPhone" && Browser !== "Andriod" && (
         <Component {...pageProps} />
       )}
     </div>
