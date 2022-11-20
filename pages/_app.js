@@ -40,15 +40,34 @@ function MyApp({ Component, pageProps }) {
       }
       setBrowser(browserName);
     }
-    detectBrowser();
+    // detectBrowser();
   }, []);
+  useEffect(() => {
+    function getMobileOperatingSystem() {
+      let userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      if (/windows phone/i.test(userAgent)) {
+        return "Windows Phone";
+      }
+      if (/android/i.test(userAgent)) {
+        setBrowser("Android");
+        return "Android";
+      }
+      if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        setBrowser("iOS");
+        return "iOS";
+      }
+      return "unknown";
+    }
+    getMobileOperatingSystem();
+  }, []);
+  console.log(Browser);
   return (
     <div
       className="overflow-x-hidden"
       // style={{ zIndex: 0 }}
       style={{ fontFamily: "Poppins,serif" }}
     >
-      {Browser == "iPhone" && (
+      {Browser == "iOS" && (
         <div className="flex items-center justify-center my-12 flex-col">
           {/* <Image src="/a.webp" height={2} width={2} /> */}
           <FeaturedBackground1 />
@@ -111,7 +130,7 @@ function MyApp({ Component, pageProps }) {
           </button>
         </div>
       )}
-      {Browser !== "iPhone" && Browser !== "Andriod" && (
+      {Browser !== "iOS" && Browser !== "Andriod" && (
         <Component {...pageProps} />
       )}
     </div>
