@@ -16,7 +16,7 @@ const HomeNav = ({ Visibility }) => {
     eats: "font-semibold",
     btnContainer: "flex items-end justify-end w-[50%]",
     addressContainer: "",
-    addressTab: `w-auto md:w-[28vw] z-40 px-4  bg-white flex  items-center bg-gray-200 rounded`,
+    addressTab: `hidden md:flex w-auto md:w-[28vw] z-40 px-4  bg-white   items-center bg-gray-200 rounded`,
     input: "placeholder:text-gray-800 outline-none py-5 md:py-3 bg-gray-200",
     loginContainer:
       "cursor-pointer hover:opacity-[0.9] flex items-center justify-center bg-white px-3 py-[0.7rem] md:px-5 py-[1.1rem] rounded-full mx-2 text-sm md:text-md md:mx-5",
