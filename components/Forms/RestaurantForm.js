@@ -2,11 +2,16 @@ import React, { useState } from "react";
 
 const style = {
   wrapper: "flex flex-col bg-amber-400",
-  singleInputContainer: "flex flex-col items-start my-2 w-[95%] md:w-[100%]",
+  singleInputContainer: "flex flex-col items-start my-2 w-[100%] md:w-[100%]",
+  singleInputContainer1: "flex flex-col items-end my-2 w-[100%] md:w-[100%]",
   input:
     "bg-gray-100 border-2 border-white outline-none  px-3 py-2 md:px-5 md:py-1 rounded placeholder:italic placeholder:text-xs w-[100%]",
   input1:
-    "bg-gray-100 border-2 border-white outline-none px-3 py-2 md:px-5 md:py-1 rounded placeholder:italic placeholder:text-xs w-[98%]",
+    "bg-gray-100 border-2 border-white outline-none px-3 py-2 md:px-5 md:py-1 rounded placeholder:italic placeholder:text-xs w-[95%]",
+  input2:
+    "bg-gray-100 border-2 border-white outline-none px-3 py-2 md:px-5 md:py-1 rounded placeholder:italic placeholder:text-xs w-[95%]",
+  input3:
+    "bg-gray-100 border-2 border-white outline-none px-3 py-2 md:px-5 md:py-1 rounded placeholder:italic placeholder:text-xs w-[100%]",
   btn: "bg-black px-3 py-2 md:px-5 md:py-2 text-white  my-6    hover:opacity-[0.85] font-normal rounded",
 };
 const RestaurantForm = () => {
@@ -65,7 +70,7 @@ const RestaurantForm = () => {
           value={Id}
         />
       </div>
-      <div className="flex">
+      <div className="flex justify-between">
         <div className={style.singleInputContainer}>
           <input
             type="text"
@@ -75,10 +80,10 @@ const RestaurantForm = () => {
             value={Contact}
           />
         </div>
-        <div className={style.singleInputContainer}>
+        <div className={style.singleInputContainer1}>
           <input
             type="text"
-            className={style.input1}
+            className={style.input2}
             placeholder="Last Name..."
             onChange={handleLastNameChange}
             value={LastName}
@@ -97,7 +102,7 @@ const RestaurantForm = () => {
       </div>
       {/* ADDING THE PHONE */}
       <div className="flex my-4">
-        <select name="countryCode" id="" className="bg-gray-100 rounded w-[65%] p-1 md:w-[45%] mr-3 text-xs">
+        <select name="countryCode" id="" className="bg-gray-100 rounded w-[50%] p-1 md:w-[44%] mr-3 text-xs">
           <option data-countryCode="GB" value="44" Selected>
             UK (+44)
           </option>
@@ -749,7 +754,7 @@ const RestaurantForm = () => {
             </option>
           </optgroup>
         </select>
-        <input type="text" className={style.input} placeholder='Phone...' />
+        <input type="text" className={style.input3} placeholder='Phone...' />
       </div>
       <input class="custom-file-input" type="file" id="file" />
 

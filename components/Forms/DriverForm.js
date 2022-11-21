@@ -2,11 +2,14 @@ import React, { useState } from "react";
 
 const style = {
   wrapper: "flex flex-col bg-amber-400",
-  singleInputContainer: "flex flex-col items-start my-2 w-[95%] md:w-[100%]",
+  singleInputContainer: "flex flex-col items-end  my-2 w-[100%] md:w-[100%]",
+  singleInputContainer1: "flex flex-col items-start  my-2 w-[100%] md:w-[100%]",
   input:
     "bg-gray-100 border-2 border-white outline-none  px-3 py-2 md:px-5 md:py-1 rounded placeholder:italic placeholder:text-xs w-[100%]",
   input1:
-    "bg-gray-100 border-2 border-white outline-none px-3 py-2 md:px-5 md:py-1 rounded placeholder:italic placeholder:text-xs w-[98%]",
+    "bg-gray-100 border-2 border-white outline-none px-3 py-2 md:px-5 md:py-1 rounded placeholder:italic placeholder:text-xs w-[95%]",
+  input2:
+    "bg-gray-100 border-2 border-white outline-none px-3 py-2 md:px-5 md:py-1 rounded placeholder:italic placeholder:text-xs w-[100%]",
   btn: "bg-black px-3 py-2 md:px-5 md:py-2 text-white  my-6    hover:opacity-[0.85] font-normal rounded",
 };
 const DriverForm = () => {
@@ -15,7 +18,7 @@ const DriverForm = () => {
   const [Id, setId] = useState("");
   const [Contact, setContact] = useState("");
   const [Email, setEmail] = useState("");
-  const [CV, setCV] = useState("");
+  const [Passport, setPassport] = useState("");
   const handleFirstNameChange = (e) => {
     setFirstName(e.target.value);
   };
@@ -31,41 +34,14 @@ const DriverForm = () => {
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
-  const handleCVChange = (e) => {
-    setCV(e.target.value);
+  const handlePassportChange = (e) => {
+    setPassport(e.target.value);
   };
   return (
     <div className={style.wrapper} style={{ fontFamily: "Poppins,serif" }}>
       <h2 className="text-2xl font-semibold text-black my-4">Get Started</h2>
-      {/* <div className={style.singleInputContainer}>
-        <input
-          type="text"
-          className={style.input}
-          placeholder="Store Name..."
-          onChange={handleFirstNameChange}
-          value={FirstName}
-        />
-      </div>
-      <div className={style.singleInputContainer}>
-        <input
-          type="text"
-          className={style.input}
-          placeholder="Store Address..."
-          onChange={handleLastNameChange}
-          value={LastName}
-        />
-      </div>
-      <div className={style.singleInputContainer}>
-        <input
-          type="text"
-          className={style.input}
-          placeholder="Floor/Suite (Optional).."
-          onChange={handleIdChange}
-          value={Id}
-        />
-      </div> */}
-      <div className="flex">
-        <div className={style.singleInputContainer}>
+      <div className="flex justify-between">
+        <div className={style.singleInputContainer1}>
           <input
             type="text"
             className={style.input1}
@@ -89,6 +65,15 @@ const DriverForm = () => {
         <input
           type="text"
           className={style.input}
+          placeholder="ID/Passport..."
+          onChange={handlePassportChange}
+          value={Passport}
+        />
+      </div>
+      <div className={style.singleInputContainer}>
+        <input
+          type="text"
+          className={style.input}
           placeholder="Email..."
           onChange={handleEmailChange}
           value={Email}
@@ -96,7 +81,7 @@ const DriverForm = () => {
       </div>
       {/* ADDING THE PHONE */}
       <div className="flex my-4">
-        <select name="countryCode" id="" className="bg-gray-100 rounded w-[65%] p-1 md:w-[45%] mr-3 text-xs">
+        <select name="countryCode" id="" className="bg-gray-100 rounded w-[50%] p-1 md:w-[44%] mr-3 text-xs">
           <option data-countryCode="GB" value="44" Selected>
             UK (+44)
           </option>
@@ -748,9 +733,9 @@ const DriverForm = () => {
             </option>
           </optgroup>
         </select>
-        <input type="text" className={style.input} placeholder='Phone...' />
+        <input type="text" className={style.input2} placeholder='Phone...' />
       </div>
-      <input class="custom-file-input" type="file" id="file" />
+      <input class="custom-file-input1" type="file" id="file" />
 
       <button className={style.btn}>Submit</button>
     </div>

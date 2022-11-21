@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const style = {
   wrapper: "flex flex-col bg-amber-400",
-  singleInputContainer: "flex flex-col items-start my-2 w-[95%] md:w-[100%]",
+  singleInputContainer: "flex flex-col items-start my-2 w-[100%] md:w-[100%]",
   input:
     "bg-gray-100 border-2 border-white outline-none  px-3 py-2 md:px-5 md:py-1 rounded placeholder:italic placeholder:text-xs w-[100%]",
   input1:
@@ -37,34 +37,6 @@ const Contact = () => {
   return (
     <div className={style.wrapper} style={{ fontFamily: "Poppins,serif" }}>
       <h2 className="text-2xl font-semibold text-black my-4">Get Started</h2>
-
-      {/* <div className={style.singleInputContainer}>
-        <input
-          type="text"
-          className={style.input}
-          placeholder="Store Name..."
-          onChange={handleFirstNameChange}
-          value={FirstName}
-        />
-      </div>
-      <div className={style.singleInputContainer}>
-        <input
-          type="text"
-          className={style.input}
-          placeholder="Store Address..."
-          onChange={handleLastNameChange}
-          value={LastName}
-        />
-      </div> */}
-      {/* <div className={style.singleInputContainer}>
-        <input
-          type="text"
-          className={style.input}
-          placeholder="Floor/Suite (Optional).."
-          onChange={handleIdChange}
-          value={Id}
-        />
-      </div> */}
       <div className={style.singleInputContainer}>
         <input
           type="text"

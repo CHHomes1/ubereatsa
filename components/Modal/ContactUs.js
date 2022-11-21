@@ -6,8 +6,7 @@ import Image from "next/image";
 import Contact from "../Forms/Contact";
 const style = {
   btn: "underline",
-  modalWrapper:
-    "flex flex-col px-3 py-8 md:px-7 md:py-16 ",
+  modalWrapper: "flex flex-col px-3 py-8 md:px-7 md:py-3 ",
   header: "",
   content: "",
   left: "flex flex-col",
@@ -24,30 +23,27 @@ const DriverRegister = () => (
     {(close) => (
       <div
         style={{ zIndex: 10 }}
-        className="bg-amber-400 flex f w-[90vw] md:w-[40vw] items-start rounded-2xl"
+        className="bg-amber-400 flex flex-col w-[90vw] md:w-[30vw] items-start rounded-2xl"
       >
+        <button className="self-end" onClick={close}>
+          <AiOutlineCloseCircle className="text-2xl md:text-3xl m-1 md:m-4 text-white" />
+        </button>
         <div
           className={style.modalWrapper}
           style={{ fontFamily: "Poppins,serif" }}
         >
           <div className={style.left}>
-            <h2 className={style.heading}>
-              Contact Us
-            </h2>
+            <h2 className={style.heading}>Contact Us</h2>
             <p className={style.para}>
               At Net Dlivery we’re all about super fast food delivery! We make
               getting food effortless by delivering a wide range of food in 15
               mins.
             </p>
-
           </div>
           <div className={style.right}>
             <Contact />
           </div>
         </div>
-        <button className="max-w-fit" onClick={close}>
-          <AiOutlineCloseCircle className="text-2xl md:text-3xl m-1 md:m-4 text-white" />
-        </button>
       </div>
     )}
   </Popup>

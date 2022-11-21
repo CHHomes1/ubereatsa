@@ -14,7 +14,7 @@ const style = {
   list: "mr-8 md:mx-5 text-xs text-stone-800 decoration-none list-none my-7 cursor-pointer hover:border-stone-800 border-b-[1px]  border-transparent max-w-fit",
   para: "text-xs text-stone-800 text-start md:text-end",
   infoNav: "flex flex-col items-end justify-around  md:w-[15%] my-5 md:my-2",
-  info: "text-xs text-stone-800",
+  info: "text-md text-stone-800",
 };
 const Signature = () => {
   return (

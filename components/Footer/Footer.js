@@ -13,7 +13,7 @@ const style = {
     "flex flex-col md:flex-row md:w-[50%] md:items-start md:justify-center",
   col1: "md:w-[50%] flex flex-col items-start justify-start",
   col2: "md:w-[50%] flex flex-col items-start justify-start",
-  list: "text-stone-800 decoration-none list-none my-5 cursor-pointer hover:border-stone-800 border-b-[1px]  border-transparent max-w-fit",
+  list: "text-stone-800 decoration-none list-none my-2 cursor-pointer hover:border-stone-800 border-b-[1px]  border-transparent max-w-fit",
 };
 const Footer = () => {
   return (
