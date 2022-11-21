@@ -6,7 +6,7 @@ const style = {
   input:
     "bg-gray-100 border-2 border-white outline-none  px-3 py-2 md:px-5 md:py-1 rounded placeholder:italic placeholder:text-xs w-[100%]",
   input1:
-    "bg-gray-100 border-2 border-white outline-none px-3 py-2 md:px-5 md:py-1 rounded placeholder:italic placeholder:text-xs w-[98%]",
+    "bg-gray-100 border-2 border-white outline-none px-3 py-2 md:px-5 md:py-1 rounded placeholder:italic placeholder:text-xs w-[100%]",
   btn: "bg-black px-3 py-2 md:px-5 md:py-2 text-white  my-6    hover:opacity-[0.85] font-normal rounded",
 };
 const Contact = () => {
