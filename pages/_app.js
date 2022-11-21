@@ -6,15 +6,14 @@ import styled from "styled-components";
 import Image from "next/image";
 function MyApp({ Component, pageProps }) {
   const FeaturedBackground1 = styled.div`
-    background: radial-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
-      url("/k.png");
+    background: radial-gradient(rgb(0, 0, 0), rgb(0, 0, 0)), url("/k.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: auto;
     height: 25vh;
     width: 100vw;
-    margin: 10px 0 10px 0;
+    margin: 10px 0px;
   `;
   const [Browser, setBrowser] = useState("");
  
@@ -108,4 +107,5 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default MyApp;
+
 

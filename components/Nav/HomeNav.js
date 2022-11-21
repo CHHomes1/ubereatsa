@@ -4,8 +4,8 @@ import { RiAccountCircleFill } from "react-icons/ri";
 import NavDrawer from "./NavDrawer";
 import Image from "next/image";
 const style = {
-  wrapper: "flex w-[100%] h-[12vh] items-center justify-center ",
-  nameContainer: "flex items-center justify-start w-[40%] mx-4 md:mx-12",
+  wrapper: "flex w-[100%] h-[12vh] md:mx-12",
+  nameContainer: "flex items-center justify-start w-[40%] mx-4 md: mx-0 md:mr-12",
   uber: "text-xl md:text-3xl",
   eats: "font-semibold",
   btnContainer: "flex items-end justify-end w-[50%]",
@@ -34,7 +34,7 @@ const HomeNav = (props) => {
         {/* <h2 className={style.uber}>
           Uber <span className={style.eats}>Eats</span>
         </h2> */}
-        <Image width={300} height={300} src="/logo.png" />
+        <Image width={180} height={180} src="/logo.png" />
       </div>
       {/* adding the button */}
       <div className={style.btnContainer}>

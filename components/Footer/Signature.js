@@ -35,7 +35,7 @@ const Signature = () => {
         </Link>
       </div>
       <div className={style.nav}>
-        <div className="flex items-center justify-start md:justify-end">
+        {/* <div className="flex items-center justify-start md:justify-end">
           <Link href="">
             <li className={style.list}>Privacy Policy</li>
           </Link>
@@ -45,14 +45,14 @@ const Signature = () => {
           <Link href="">
             <li className={style.list}>Pricing</li>
           </Link>
-        </div>
-        <p className={style.para}>
+        </div> */}
+        {/* <p className={style.para}>
           This site is protected by reCAPTCHA and the Google Privacy Policy and
           Terms of Service apply.
-        </p>
+        </p> */}
       </div>
       <div className={style.infoNav}>
-        <h2 className={style.info}>Do not sell my info (California)</h2>
+        {/* <h2 className={style.info}>Do not sell my info (California)</h2> */}
         <h2 className={style.info}>© 2022 Uber Technologies Inc.</h2>
       </div>
     </div>

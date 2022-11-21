@@ -3,7 +3,8 @@ import React, { useState } from "react";
 const style = {
   wrapper: "flex flex-col bg-amber-400",
   singleInputContainer: "flex flex-col items-start my-2",
-  input: "outline-none w-[95%] md:w-[80%] px-3 py-2 md:px-5 md:py-2 rounded placeholder:italic placeholder:text-xs",
+  input:
+    "outline-none w-[95%] md:w-[80%] px-3 py-2 md:px-5 md:py-2 rounded placeholder:italic placeholder:text-xs",
   btn: "bg-black px-3 py-2 md:px-5 md:py-2 text-white  my-4  w-[95%] md:w-[80%]  hover:opacity-[0.85]",
 };
 const DriverForm = () => {
@@ -34,7 +35,9 @@ const DriverForm = () => {
   return (
     <div className={style.wrapper} style={{ fontFamily: "Poppins,serif" }}>
       <div className={style.singleInputContainer}>
-        <label htmlFor="fisrt" className="text-sm">First Name</label>
+        <label htmlFor="fisrt" className="text-sm">
+          First Name
+        </label>
         <input
           type="text"
           className={style.input}
@@ -44,7 +47,9 @@ const DriverForm = () => {
         />
       </div>
       <div className={style.singleInputContainer}>
-        <label htmlFor="last" className="text-sm">Last Name</label>
+        <label htmlFor="last" className="text-sm">
+          Last Name
+        </label>
         <input
           type="text"
           className={style.input}
@@ -54,7 +59,9 @@ const DriverForm = () => {
         />
       </div>
       <div className={style.singleInputContainer}>
-        <label htmlFor="id" className="text-sm">ID No.</label>
+        <label htmlFor="id" className="text-sm">
+          ID No.
+        </label>
         <input
           type="text"
           className={style.input}
@@ -64,7 +71,9 @@ const DriverForm = () => {
         />
       </div>
       <div className={style.singleInputContainer}>
-        <label htmlFor="contact" className="text-sm">Contact No.</label>
+        <label htmlFor="contact" className="text-sm">
+          Contact No.
+        </label>
         <input
           type="text"
           className={style.input}
@@ -74,7 +83,9 @@ const DriverForm = () => {
         />
       </div>
       <div className={style.singleInputContainer}>
-        <label htmlFor="fisrt" className="text-sm">Email</label>
+        <label htmlFor="fisrt" className="text-sm">
+          Email
+        </label>
         <input
           type="text"
           className={style.input}
@@ -84,14 +95,18 @@ const DriverForm = () => {
         />
       </div>
       <div className={style.singleInputContainer}>
-        <label htmlFor="fisrt" className="text-sm">Upload ID/Passport</label>
-        <input
+        {/* <label
+          htmlFor="fisrt"
+          className="text-sm border-white border-2 bg-black"
+        ></label> */}
+        {/* Upload ID/Passport */}
+        {/* <input
           type="file"
           className={style.input}
-          placeholder="CV"
           onChange={handleCVChange}
           value={CV}
-        />
+        /> */}
+        <input class="custom-file-input" type="file" id="file" />
       </div>
       <button className={style.btn}>Submit</button>
     </div>

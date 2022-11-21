@@ -5,6 +5,7 @@ import List from "@mui/material/List";
 import Link from "next/link";
 import Image from "next/image";
 import { AiFillApple, AiFillAndroid } from "react-icons/ai";
+
 const NavDrawer = () => {
   const [state, setState] = React.useState({
     right: false,
@@ -25,11 +26,10 @@ const NavDrawer = () => {
       sx={{
         color: "rgb(0,0,0)",
         backgroundColor: "rgb(255, 255, 255)",
-        width: anchor === "top" || anchor === "bottom" ? "auto" : 250,
+        width: anchor === "top" || anchor === "bottom" ? "auto" : 280,
         height: 1200,
         letterSpacing: "1px",
       }}
-      //   role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
@@ -48,49 +48,34 @@ const NavDrawer = () => {
           <p className="font-bold text-amber-400">Net Delivery</p>
         </div>
         {/* BELOEW ARRAY HAS THE LIST OF THE TEXTS THAT IS RENDERED AS A LIST */}
-        {/* {[
-          "Sign up",
-          "Log in",
-          "Create a business account",
-          "Add your Restaurant",
-          "Sign up to driver",
-        ].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              <div className="py-2 bg-black px-4 py-3 md:px-5 md:py-3 text-white">asdf</div>
-              <div className="py-2">{text === "Login"}</div>
-              <div className="py-2">{text === "Create a business account"}</div>
-              <div className="py-2">{text === "Add your Restaurant"}</div>
-              <div className="py-2">{text === "Sign up to driver"}</div>
-            </ListItemIcon>
-            <div className="">
-              <ListItemText
-                primary={text}
-                onClick={() => {
-                  handleNavClick(text);
-                }}
-              />
-            </div>
-          </ListItem>
-        ))} */}
-        <div className="h-[70vh]">
-          <div className="cursor-pointer hover:opacity-[0.85] py-2 bg-amber-400 px-4 py-3 md:px-5 md:py-3 text-white text-center mx-5 rounded my-2">
+
+        <div className="h-[60vh]">
+          {/* <div className="cursor-pointer hover:opacity-[0.85] py-2 bg-amber-400 px-4 py-3 md:px-5 md:py-3 text-white text-center mx-5 rounded my-2">
             Sign up
           </div>
           <div className="cursor-pointer hover:opacity-[0.85] py-2 bg-gray-200 px-4 py-3 md:px-5 md:py-3 text-black mx-5 rounded text-center my-2">
             Login
+          </div> */}
+          <div className="cursor-pointer py-2 mx-5 text-xs hover:border-black border-b-[1px] border-transparent max-w-fit ">
+            Signup as Restaurant Partner
           </div>
-          <div className="cursor-pointer py-2 mx-5 text-xs hover:border-black border-b-[1px] border-transparent max-w-fit ">Create a business account</div>
-          <div className="cursor-pointer py-2 mx-5 text-xs hover:border-black border-b-[1px] border-transparent max-w-fit ">Add your Restaurant</div>
-          <div className="cursor-pointer py-2 mx-5 text-xs hover:border-black border-b-[1px] border-transparent max-w-fit ">Sign up to driver</div>
+          <div className="cursor-pointer py-2 mx-5 text-xs hover:border-black border-b-[1px] border-transparent max-w-fit ">
+            Signup as Courier Partner
+          </div>
+          <div className="cursor-pointer py-2 mx-5 text-xs hover:border-black border-b-[1px] border-transparent max-w-fit ">
+            Sign up to driver
+          </div>
         </div>
         {/* adding the logo */}
         <div className="mt-auto">
-          <div className="mx-4">
+          {/* <div className="mx-4">
             <Image width={200} height={200} src="/logo.png" />
-          </div>
+          </div> */}
           {/* adding the store button container */}
-          <div className="flex my-8">
+          <h2 className="text-xs mx-auto text-center font-semibold">
+            Download our app below
+          </h2>
+          {/* <div className="flex my-8">
             <div className="flex items-center justify-center bg-gray-200 rounded-full px-3 py-2 md:px-4 md:py-2 mx-1 hover:opacity-[0.75] cursor-pointer">
               <AiFillApple className="" />
               <button className="">iPhone</button>
@@ -100,6 +85,19 @@ const NavDrawer = () => {
               <AiFillAndroid className="" />
               <button className="">Andriod</button>
             </div>
+          </div> */}
+          {/* adding the play store and apps store buttons */}
+          <div className="flex md:flex-row mb-7 mt-7 items-center justify-around">
+            <Link href="">
+              <div className="my-2">
+                <Image height={10} width={120} src="/playstore.png" />
+              </div>
+            </Link>
+            <Link href="">
+              <div className="my-2">
+                <Image height={10} width={120} src="/appstore.svg" />
+              </div>
+            </Link>
           </div>
         </div>
       </List>

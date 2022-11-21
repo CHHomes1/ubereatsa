@@ -10,12 +10,12 @@ const Order = () => {
   console.log(AddressClick);
   const style = {
     wrapper: "h-[88vh] flex flex-col md:justify-center mx-3 md:mx-12 z-0 my-12 md:my-0",
-    heading: "text-4xl md:text-5xl font-semibold my-4 md:mb-8 text-amber-400",
+    heading: "text-4xl md:text-4xl font-semibold my-4 md:mb-8 text-amber-400 md:w-[40vw]",
     orderTab: ` flex mb-3 flex-col md:flex-row`,
-    addressTab: `z-40 px-4 border-b-2 border-black bg-white flex  items-center ${
+    addressTab: `w-auto md:w-[28vw] z-40 px-4 border-b-2 border-black bg-white flex  items-center ${
       AddressClick ? " border-amber-400" : "border-none"
     }`,
-    input: "placeholder:text-gray-300 outline-none py-5 md:py-3 w-[40vw]",
+    input: "placeholder:text-gray-300 outline-none py-5 md:py-3 ",
     btn: "hover:opacity-[0.89] bg-amber-400 px-4 py-5 md:px-5 md:py-3 text-black rounded md:mx-3 text-lg my-3 md:my-0",
     signin: "underline cursor-pointer text-white",
   };
@@ -39,12 +39,12 @@ const Order = () => {
         </div>
         <button className={style.btn}>Find Food</button>
       </div>
-      <h3 className="text-white">
+      {/* <h3 className="text-white">
         <Link href="/signin">
           <span className={style.signin}>Sign In</span>{" "}
         </Link>{" "}
         for your recent addresses
-      </h3>
+      </h3> */}
     </div>
   );
 };

@@ -2,35 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 .modal {
-    font-size: 12px;
-  }
-  .modal > .header {
-    width: 100%;
-    border-bottom: 1px solid gray;
-    font-size: 18px;
-    text-align: center;
-    padding: 5px;
-  }
-  .modal > .content {
-    width: 100%;
-    padding: 10px 5px;
-  }
-  .modal > .actions {
-    width: 100%;
-    padding: 10px 5px;
-    margin: auto;
-    text-align: center;
-  }
-  .modal > .close {
-    cursor: pointer;
-    position: absolute;
-    display: block;
-    padding: 2px 5px;
-    line-height: 20px;
-    right: -10px;
-    top: -10px;
-    font-size: 24px;
-    background: #ffffff;
-    border-radius: 18px;
-    border: 1px solid #cfcece;
-  }
+  font-size: 12px;
+}
+.modal > .header {
+  width: 100%;
+  border-bottom: 1px solid gray;
+  font-size: 18px;
+  text-align: center;
+  padding: 5px;
+}
+.modal > .content {
+  width: 100%;
+  padding: 10px 5px;
+}
+.modal > .actions {
+  width: 100%;
+  padding: 10px 5px;
+  margin: auto;
+  text-align: center;
+}
+.modal > .close {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  padding: 2px 5px;
+  line-height: 20px;
+  right: -10px;
+  top: -10px;
+  font-size: 24px;
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #cfcece;
+}
+
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: "Upload ID/Passport";
+  display: inline-block;
+  background-color: black;
+  border-radius: 5px;
+  padding: 7px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+}
+.custom-file-input:hover::before {
+  border-color: black;
+}
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+input[type='file'] {
+  color: rgba(0, 0, 0, 0)
+}
