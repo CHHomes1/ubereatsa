@@ -24,7 +24,7 @@ const DriverRegister = () => (
     {(close) => (
       <div
         style={{ zIndex: 10 }}
-        className="bg-amber-400 flex f w-[90vw] md:w-[50vw] items-start rounded-2xl"
+        className="bg-amber-400 flex f w-[90vw] md:w-[40vw] items-start rounded-2xl"
       >
         <div
           className={style.modalWrapper}

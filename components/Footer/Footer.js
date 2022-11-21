@@ -10,9 +10,9 @@ const style = {
   btnContainer: "flex md:flex-row mb-7 mt-7 justify-around",
   left: "flex flex-col items-center md:items-start justify-between md:w-[50%] mx-3 md:mx-12",
   right:
-    "flex flex-col md:flex-row md:w-[50%] md:items-center md:justify-center",
-  col1: "md:w-[50%]",
-  col2: "md:w-[50%]",
+    "flex flex-col md:flex-row md:w-[50%] md:items-start md:justify-center",
+  col1: "md:w-[50%] flex flex-col items-start justify-start",
+  col2: "md:w-[50%] flex flex-col items-start justify-start",
   list: "text-stone-800 decoration-none list-none my-5 cursor-pointer hover:border-stone-800 border-b-[1px]  border-transparent max-w-fit",
 };
 const Footer = () => {
@@ -45,8 +45,8 @@ const Footer = () => {
             <li className={style.list}>Add your restaurant</li>
             <li className={style.list}>Sign up to deliver</li>
             <li className={style.list}>Create a business account</li>
-            {/* </div>
-          <div className={style.col2}> */}
+            </div>
+          <div className={style.col2}>
             <li className={style.list}>Restaurants Neat Me</li>
             <li className={style.list}>View all cities</li>
           </div>

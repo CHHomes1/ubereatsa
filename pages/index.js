@@ -10,7 +10,7 @@ export default function Main() {
       <Head>
         <title>Uber Eats Website</title>
         <meta name="description" content="An website for ubereats" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <Home />
     </div>

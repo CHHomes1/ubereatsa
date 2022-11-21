@@ -5,8 +5,9 @@ import List from "@mui/material/List";
 import Link from "next/link";
 import Image from "next/image";
 import { AiFillApple, AiFillAndroid } from "react-icons/ai";
-
+import useWindowSize from "../../hooks/useWindowSize";
 const NavDrawer = () => {
+  const { width } = useWindowSize();
   const [state, setState] = React.useState({
     right: false,
   });
@@ -26,7 +27,14 @@ const NavDrawer = () => {
       sx={{
         color: "rgb(0,0,0)",
         backgroundColor: "rgb(255, 255, 255)",
-        width: anchor === "top" || anchor === "bottom" ? "auto" : 280,
+        width:
+          anchor === "top" || anchor === "bottom"
+            ? "auto"
+            : width < 500
+            ? 260
+            : width > 500 && width < 1000
+            ? 280
+            : 400,
         height: 1200,
         letterSpacing: "1px",
       }}
@@ -42,10 +50,10 @@ const NavDrawer = () => {
           {/* <img src={`${signature}`} alt="" /> */}
         </div>
         <div
-          className="h-[10vh] flex my-2 text-xl w-[100%] justify-center"
+          className="h-[10vh] flex my-2 text-xl w-[100%] justify-center scale-y-[0.9] scale-x-[1] md:scale-x-[0.95] md:scale-y-[0.7]"
           style={{ fontFamily: "Poppins, serif" }}
         >
-          <p className="font-bold text-amber-400">Net Delivery</p>
+          <Image width={200} height={100} src="/logo.png" />
         </div>
         {/* BELOEW ARRAY HAS THE LIST OF THE TEXTS THAT IS RENDERED AS A LIST */}
 
