@@ -1,7 +1,7 @@
 import React from "react";
 import SingleCard from "./SingleCard";
 const style = {
-  wrapper: "flex items-center justify-around my-5 md:my-24 flex-wrap",
+  wrapper: "flex items-center justify-around my-8 md:my-48 flex-wrap",
 };
 const Cards = () => {
   return (
