@@ -5,11 +5,14 @@ import Order from "./Order";
 import Cards from "../Cards/Cards";
 import Footer from "../Footer/Footer";
 import Join from "../Join/Join";
+import { GiConwayLifeGlider } from "react-icons/gi";
+import VisibilitySensor from "react-visibility-sensor";
 const style = {
   wrapper: "",
 };
 const Home = () => {
   const [View, setView] = useState(0);
+  const [Visibility, setVisibility] = useState(false);
   useEffect(() => {
     setView(window.innerWidth);
   }, []);
@@ -25,12 +28,17 @@ const Home = () => {
     height: 100vh;
     width: 100vw;
   `;
+  function onChange(isVisible) {
+    setVisibility(isVisible);
+  }
   return (
     <FeaturedBackground1 className={style.wrapper}>
       {/* adding the nav */}
       <div className="flex flex-col">
-        <HomeNav />
-        <Order />
+        <HomeNav Visibility={Visibility} />
+        <VisibilitySensor onChange={onChange}>
+          <Order />
+        </VisibilitySensor>
         <Cards />
         <Join />
         <Footer />

@@ -1,10 +1,11 @@
 import Head from "next/head";
 import Home from "../components/Home/Home";
-
+import React, { useState, useEffect } from "react";
 const style = {
   wrapper: "",
 };
 export default function Main() {
+  
   return (
     <div className={style.container}>
       <Head>

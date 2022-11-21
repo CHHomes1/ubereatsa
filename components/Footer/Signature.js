@@ -24,7 +24,6 @@ const Signature = () => {
         <Link href="">
           <AiFillFacebook
             className="text-2xl md:text-3xl mx-4 cursor-pointer"
-            onClick={console.log("asdf")}
           />
         </Link>
         <Link href="">

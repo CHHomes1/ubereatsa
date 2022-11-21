@@ -6,7 +6,7 @@ import styled from "styled-components";
 import Image from "next/image";
 function MyApp({ Component, pageProps }) {
   const FeaturedBackground1 = styled.div`
-    background: radial-gradient(rgb(0, 0, 0), rgb(0, 0, 0)), url("/k.png");
+    background: radial-gradient(rgba(0, 0, 0,0), rgba(0, 0, 0,0)), url("/k.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

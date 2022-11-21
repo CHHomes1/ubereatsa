@@ -33,7 +33,7 @@ const NavDrawer = () => {
             : width < 500
             ? 260
             : width > 500 && width < 1000
-            ? 280
+            ? 380
             : 400,
         height: 1200,
         letterSpacing: "1px",
@@ -50,7 +50,7 @@ const NavDrawer = () => {
           {/* <img src={`${signature}`} alt="" /> */}
         </div>
         <div
-          className="h-[10vh] flex my-2 text-xl w-[100%] justify-center scale-y-[0.9] scale-x-[1] md:scale-x-[0.95] md:scale-y-[0.7]"
+          className="h-[10vh] flex my-2 text-xl w-[100%] justify-center scale-y-[0.5] scale-x-[1] md:scale-x-[0.95] md:scale-y-[0.4]"
           style={{ fontFamily: "Poppins, serif" }}
         >
           <Image width={200} height={100} src="/logo.png" />
