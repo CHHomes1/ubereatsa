@@ -115,7 +115,7 @@ const NavDrawer = () => {
   return (
     <div>
       {/* below string will set the location of the drawer */}
-      {["left"].map((anchor) => (
+      {["right"].map((anchor) => (
         <React.Fragment key={anchor}>
           <button
             onClick={toggleDrawer(anchor, true)}

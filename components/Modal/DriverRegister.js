@@ -4,7 +4,7 @@ import { AiOutlineCloseCircle } from "react-icons/ai";
 import DriverForm from "../Forms/DriverForm";
 import Image from "next/image";
 const style = {
-  btn: "my-6 bg-amber-400 text-white font-semibold tracking-wide  px-4 py-3 md:px-5 md:px-6 mx-3 rounded w-[50vw]  md:w-[10vw] hover:opacity-[0.85]",
+  btn: "underline",
   modalWrapper:
     "flex flex-col md:flex-row px-3 py-8 md:px-7 md:py-8 w-[100%] justify-between",
   header: "",
@@ -15,7 +15,11 @@ const style = {
   para: "text-sm md:text-md self-end my-4",
 };
 const DriverRegister = () => (
-  <Popup trigger={<button className={style.btn}> Driver </button>} modal nested>
+  <Popup
+    trigger={<button className={style.btn}> Sign up to deliver </button>}
+    modal
+    nested
+  >
     {(close) => (
       <div
         style={{ zIndex: 10 }}

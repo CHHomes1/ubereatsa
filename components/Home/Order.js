@@ -11,7 +11,7 @@ const Order = () => {
     wrapper: "h-[88vh] flex flex-col justify-center mx-3 md:mx-12 z-0 my-12 md:my-0",
     heading: "text-4xl sm:text-5xl md:text-4xl font-semibold my-9 md:mb-8 text-amber-400 md:w-[40vw] ",
     orderTab: ` flex mb-3 flex-col sm:flex-row`,
-    addressTab: `w-auto sm:w-[40vw] md:w-[28vw] z-40 px-4 border-b-2 border-black bg-white flex  items-center ${
+    addressTab: `w-auto sm:w-[40vw] md:w-[35vw] z-40 px-4 border-b-2 border-black bg-white flex  items-center ${
       AddressClick ? " border-amber-400" : "border-none"
     }`,
     input: "placeholder:text-gray-300 outline-none py-5 md:py-3 w-[100%]",

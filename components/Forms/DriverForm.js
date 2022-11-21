@@ -81,7 +81,11 @@ const DriverForm = () => {
       </div>
       {/* ADDING THE PHONE */}
       <div className="flex my-4">
-        <select name="countryCode" id="" className="bg-gray-100 rounded w-[50%] p-1 md:w-[44%] mr-3 text-xs">
+        <select
+          name="countryCode"
+          id=""
+          className="bg-gray-100 rounded w-[50%] p-1 md:w-[44%] mr-3 text-xs"
+        >
           <option data-countryCode="GB" value="44" Selected>
             UK (+44)
           </option>
@@ -733,9 +737,12 @@ const DriverForm = () => {
             </option>
           </optgroup>
         </select>
-        <input type="text" className={style.input2} placeholder='Phone...' />
+        <input type="text" className={style.input2} placeholder="Phone..." />
       </div>
-      <input class="custom-file-input1" type="file" id="file" />
+      <div className="flex items-center">
+        <input class="custom-file-input1" type="file" id="file" />
+        <input class="custom-file-input2" type="file" id="file" />
+      </div>
 
       <button className={style.btn}>Submit</button>
     </div>

@@ -4,7 +4,7 @@ import { AiOutlineCloseCircle } from "react-icons/ai";
 import RestaurantForm from "../Forms/RestaurantForm";
 import Image from "next/image";
 const style = {
-  btn: " my-4 bg-amber-400 text-white font-semibold tracking-wide  px-4 py-3 md:px-5 md:px-6 mx-3 rounded w-[50vw] md:w-[10vw] hover:opacity-[0.85]",
+  btn: " underline",
   modalWrapper:
     "flex flex-col md:flex-row px-3 py-8 md:px-7 md:py-6 w-[100%] justify-between",
   header: "",
@@ -16,7 +16,7 @@ const style = {
 };
 const RestaurantRegister = () => (
   <Popup
-    trigger={<button className={style.btn}> Restaurant </button>}
+    trigger={<button className={style.btn}> Add your restaurant </button>}
     modal
     nested
   >
