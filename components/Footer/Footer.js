@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Signature from "./Signature";
 const style = {
-  wrapper: "border-t-2 border-gray-200 ml-0 pl-5",
+  wrapper: "border-t-2 border-gray-200 ml-0",
   footerNav: "flex flex-col md:flex-row mt-8 md:mt-24 w-[100%]",
   uber: "text-2xl md:text-4xl my-8 md:my-2",
   eats: "font-semibold",
