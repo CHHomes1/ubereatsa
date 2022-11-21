@@ -2,6 +2,9 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Signature from "./Signature";
+import ContactUs from "../Modal/ContactUs";
+import DriverRegister from "../Modal/ContactUs";
+import RestaurantRegister from "../Modal/RestaurantRegister";
 const style = {
   wrapper: "border-t-2 border-gray-200 ml-0",
   footerNav: "flex flex-col md:flex-row mt-8 md:mt-24 w-[100%]",
@@ -13,7 +16,8 @@ const style = {
     "flex flex-col md:flex-row md:w-[50%] md:items-start md:justify-center",
   col1: "md:w-[50%] flex flex-col items-start justify-start",
   col2: "md:w-[50%] flex flex-col items-start justify-start",
-  list: "text-stone-800 decoration-none list-none my-2 cursor-pointer hover:border-stone-800 border-b-[1px]  border-transparent max-w-fit",
+  list: "text-stone-800 decoration-none list-none my-2 cursor-pointer   max-w-fit underline",
+  list1: "text-stone-800 decoration-none list-none my-2 cursor-pointer    max-w-fit underline",
 };
 const Footer = () => {
   return (
@@ -42,13 +46,19 @@ const Footer = () => {
         </div>
         <div className={style.right}>
           <div className={style.col1}>
-            <li className={style.list}>Add your restaurant</li>
-            <li className={style.list}>Sign up to deliver</li>
-            <li className={style.list}>Create a business account</li>
-            </div>
+            <li className={style.list}>
+              <RestaurantRegister />
+            </li>
+            <li className={style.list}>
+              <DriverRegister />
+            </li>
+            <li className={style.list}>
+              <ContactUs />
+            </li>
+          </div>
           <div className={style.col2}>
-            <li className={style.list}>Restaurants Neat Me</li>
-            <li className={style.list}>View all cities</li>
+            <li className={style.list1}>Restaurants Neat Me</li>
+            <li className={style.list1}>View all cities</li>
           </div>
         </div>
       </div>
