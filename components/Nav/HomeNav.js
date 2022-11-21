@@ -7,19 +7,19 @@ import NavDrawer from "./NavDrawer";
 import Image from "next/image";
 const HomeNav = ({ Visibility }) => {
   const style = {
-    wrapper: `fixed flex items-center justify-end ${
-      !Visibility ? "justify-center md:justify-end" : ""
+    wrapper: `fixed flex items-center justify-between ${
+      !Visibility ? "justify-center md:justify-between" : ""
     }   w-[100%] h-[10vh] md:px-12 ${
       Visibility ? "bg-transparent" : "bg-white"
     }`,
     nameContainer: `${
       !Visibility ? "hidden sm:flex" : "flex"
-    }  items-center justify-end mx-4 md: mx-0 md:mr-12`,
+    }  items-center justify-center mx-4 md: mx-0 md:mr-12`,
     uber: "text-xl md:text-3xl",
     eats: "font-semibold",
     btnContainer: "flex items-end justify-end w-[50%]",
     addressContainer: "",
-    addressTab: `mx-4 flex w-auto md:w-[45vw] z-40 px-4  bg-white   items-center bg-gray-200 rounded flex justify-center items-center`,
+    addressTab: `mx-4 flex w-auto md:w-[45vw] z-40 px-4  bg-white   items-center bg-gray-200 rounded flex `,
     input:
       "placeholder:text-gray-800 outline-none py-2 md:py-3 bg-gray-200 mx-12 md:mx-2",
     loginContainer:
@@ -41,6 +41,7 @@ const HomeNav = ({ Visibility }) => {
       style={{ fontFamily: "Poppins,serif", zIndex: 20 }}
     >
       {/* adding the logo */}
+      <Image width={180} height={180} src="/logo.png" />
       <div className={style.addressContainer}>
         {/* <div className={style.loginContainer}>
           <RiAccountCircleFill className="mr-3 text-xl md:text-xl" />
@@ -71,7 +72,6 @@ const HomeNav = ({ Visibility }) => {
         {/* <h2 className={style.uber}>
           Uber <span className={style.eats}>Eats</span>
         </h2> */}
-        <Image width={180} height={180} src="/logo.png" />
         <NavDrawer />
       </div>
       {/* adding the button */}

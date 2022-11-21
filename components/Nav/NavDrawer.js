@@ -96,12 +96,12 @@ const NavDrawer = () => {
           </div> */}
           {/* adding the play store and apps store buttons */}
           <div className="flex md:flex-row mb-7 mt-7 items-center justify-around">
-            <Link href="">
+            <Link href="https://play.google.com/store/apps/details?id=com.restaurants.netdelivery">
               <div className="my-2">
                 <Image height={10} width={120} src="/playstore.png" />
               </div>
             </Link>
-            <Link href="">
+            <Link href="https://apps.apple.com/us/app/netdelivery/id1641589963">
               <div className="my-2">
                 <Image height={10} width={120} src="/appstore.svg" />
               </div>

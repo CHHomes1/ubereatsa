@@ -28,12 +28,12 @@ const Footer = () => {
 
           {/* adding the play store and apps store buttons */}
           <div className={style.btnContainer}>
-            <Link href="">
+            <Link href="https://play.google.com/store/apps/details?id=com.restaurants.netdelivery">
               <div className="my-2 mr-7">
                 <Image height={10} width={150} src="/playstore.png" />
               </div>
             </Link>
-            <Link href="">
+            <Link href="https://apps.apple.com/us/app/netdelivery/id1641589963">
               <div className="my-2 mr-4">
                 <Image height={10} width={150} src="/appstore.svg" />
               </div>
