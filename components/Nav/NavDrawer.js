@@ -34,7 +34,7 @@ const NavDrawer = () => {
             ? 260
             : width > 500 && width < 1000
             ? 380
-            : 400,
+            : 350,
         height: 1200,
         letterSpacing: "1px",
       }}
@@ -57,20 +57,20 @@ const NavDrawer = () => {
         </div>
         {/* BELOEW ARRAY HAS THE LIST OF THE TEXTS THAT IS RENDERED AS A LIST */}
 
-        <div className="h-[60vh]">
+        <div className="h-[60vh]" style={{ fontFamily: "Poppins, serif" }}>
           {/* <div className="cursor-pointer hover:opacity-[0.85] py-2 bg-amber-400 px-4 py-3 md:px-5 md:py-3 text-white text-center mx-5 rounded my-2">
             Sign up
           </div>
           <div className="cursor-pointer hover:opacity-[0.85] py-2 bg-gray-200 px-4 py-3 md:px-5 md:py-3 text-black mx-5 rounded text-center my-2">
             Login
           </div> */}
-          <div className="cursor-pointer py-2 mx-5 text-xs hover:border-black border-b-[1px] border-transparent max-w-fit ">
+          <div className="tracking-normal cursor-pointer py-2 mx-5 text-xs sm:text-lg md:text-sm hover:border-black border-b-[1px] border-transparent max-w-fit ">
             Signup as Restaurant Partner
           </div>
-          <div className="cursor-pointer py-2 mx-5 text-xs hover:border-black border-b-[1px] border-transparent max-w-fit ">
+          <div className="tracking-normal cursor-pointer py-2 mx-5 text-xs sm:text-lg md:text-sm hover:border-black border-b-[1px] border-transparent max-w-fit ">
             Signup as Courier Partner
           </div>
-          <div className="cursor-pointer py-2 mx-5 text-xs hover:border-black border-b-[1px] border-transparent max-w-fit ">
+          <div className="tracking-normal cursor-pointer py-2 mx-5 text-xs sm:text-lg md:text-sm hover:border-black border-b-[1px] border-transparent max-w-fit ">
             Sign up to driver
           </div>
         </div>
@@ -80,7 +80,7 @@ const NavDrawer = () => {
             <Image width={200} height={200} src="/logo.png" />
           </div> */}
           {/* adding the store button container */}
-          <h2 className="text-xs mx-auto text-center font-semibold">
+          <h2 className="text-xs mx-auto text-center font-semibold" style={{ fontFamily: "Poppins, serif" }}>
             Download our app below
           </h2>
           {/* <div className="flex my-8">
@@ -95,14 +95,14 @@ const NavDrawer = () => {
             </div>
           </div> */}
           {/* adding the play store and apps store buttons */}
-          <div className="flex md:flex-row mb-7 mt-7 items-center justify-around">
+          <div className="flex md:flex-row mb-7 mt-7 items-center justify-around w-[90%] md:w-[70%] mx-auto">
             <Link href="https://play.google.com/store/apps/details?id=com.restaurants.netdelivery">
-              <div className="my-2">
+              <div className="my-2 mx-1">
                 <Image height={10} width={120} src="/playstore.png" />
               </div>
             </Link>
             <Link href="https://apps.apple.com/us/app/netdelivery/id1641589963">
-              <div className="my-2">
+              <div className="my-2 mx-1">
                 <Image height={10} width={120} src="/appstore.svg" />
               </div>
             </Link>
