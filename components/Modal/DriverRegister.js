@@ -17,14 +17,16 @@ const DriverRegister = ({footer}) => {
   };
   return(
   <Popup
-    trigger={<button className={style.btn}> Sign up to deliver </button>}
+    trigger={<button className={style.btn}> Signup as courier partner </button>}
     modal
     nested
+    style={{ zIndex: 200 }}
+
   >
     {(close) => (
       <div
-        style={{ zIndex: 10 }}
-        className="bg-amber-400 flex flex-col w-[90vw] md:w-[30vw] items-start rounded-2xl"
+      style={{ zIndex: 200 }}
+      className="bg-amber-400 flex flex-col w-[90vw] md:w-[30vw] items-start rounded-2xl"
       >
         <button className="self-end" onClick={close}>
           <AiOutlineCloseCircle className="text-2xl md:text-3xl m-1 md:m-4 text-white" />

@@ -38,7 +38,7 @@ const HomeNav = ({ Visibility }) => {
   return (
     <div
       className={style.wrapper}
-      style={{ fontFamily: "Poppins,serif", zIndex: 20 }}
+      style={{ fontFamily: "Poppins,serif", zIndex: 10 }}
     >
       {/* adding the logo */}
       <Image width={240} height={240} src="/logo.png" />
@@ -65,16 +65,8 @@ const HomeNav = ({ Visibility }) => {
         )}
       </div>
       <div className={style.nameContainer}>
-        {/* <GiHamburgerMenu
-          className="mr-3 text-xl md:text-3xl cursor-pointer"
-          onClick={handleMenuClick}
-        /> */}
-        {/* <h2 className={style.uber}>
-          Uber <span className={style.eats}>Eats</span>
-        </h2> */}
-        <NavDrawer />
+          <NavDrawer />
       </div>
-      {/* adding the button */}
     </div>
   );
 };

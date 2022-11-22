@@ -17,15 +17,15 @@ const DriverRegister = ({ footer }) => {
   };
   return (
     <Popup
-      trigger={
-        <button className={style.btn}> Create a business account </button>
-      }
+      trigger={<button className={style.btn}> Contact us </button>}
       modal
       nested
+      closeOnDocumentClick="false"
+      style={{ zIndex: 200 }}
     >
       {(close) => (
         <div
-          style={{ zIndex: 10 }}
+          style={{ zIndex: 20 }}
           className="bg-amber-400 flex flex-col w-[90vw] md:w-[30vw] items-start rounded-2xl"
         >
           <button className="self-end" onClick={close}>
@@ -38,7 +38,7 @@ const DriverRegister = ({ footer }) => {
             <div className={style.left}>
               <h2 className={style.heading}>Contact Us</h2>
               <p className={style.para}>
-                At Net Dlivery we’re all about super fast food delivery! We make
+                At NetDlivery we’re all about super fast food delivery! We make
                 getting food effortless by delivering a wide range of food in 15
                 mins.
               </p>

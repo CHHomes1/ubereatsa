@@ -24,7 +24,7 @@ const Order = () => {
       style={{ fontFamily: "Poppins,serif" }}
       //   onClick={() => setAddressClick(false)}
     >
-      <h2 className={style.heading}>Order food to your door</h2>
+      <h2 className={style.heading}>Check if your area is covered</h2>
       <div className={style.orderTab}>
         <div className={style.addressTab} onClick={() => setAddressClick(true)}>
           <HiLocationMarker className="text-black text-2xl mr-3" />
@@ -36,7 +36,7 @@ const Order = () => {
             className={style.input}
           />
         </div>
-        <button className={style.btn}>Find Food</button>
+        <button className={style.btn}>Check Coverage</button>
       </div>
       {/* <h3 className="text-white">
         <Link href="/signin">

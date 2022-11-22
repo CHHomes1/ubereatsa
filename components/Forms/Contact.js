@@ -36,7 +36,7 @@ const Contact = () => {
   };
   return (
     <div className={style.wrapper} style={{ fontFamily: "Poppins,serif" }}>
-      <h2 className="text-2xl font-semibold text-black my-4">Get Started</h2>
+      {/* <h2 className="text-2xl font-semibold text-black my-4">Get Started</h2> */}
       <div className={style.singleInputContainer}>
         <input
           type="text"

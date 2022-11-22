@@ -8,8 +8,8 @@ import {
 } from "react-icons/ai";
 const style = {
   wrapper:
-    "flex flex-col md:flex-row items-start md:items-start md:mt-16 mb-3 md:mb-6 md:w-[100%] border-t-2 border-gray-200 py-5 md:p-7",
-  social: "flex md:w-[30%]",
+    "p-3 flex flex-col md:flex-row items-start md:items-start md:mt-16 mb-3 md:mb-6 md:w-[100%] border-t-2 border-gray-200 py-5 md:p-7",
+  social: "flex md:w-[30%] mx-auto my-3",
   nav: " md:w-[50%]",
   list: "mr-8 md:mx-5 text-xs text-stone-800 decoration-none list-none my-7 cursor-pointer hover:border-stone-800 border-b-[1px]  border-transparent max-w-fit",
   para: "text-xs text-stone-800 text-start md:text-end",
@@ -21,15 +21,15 @@ const Signature = () => {
     <div className={style.wrapper}>
       {/* adding the social icons */}
       <div className={style.social}>
-        <Link href="">
+        <Link href="https://www.facebook.com/NetDeliverySA">
           <AiFillFacebook
             className="text-2xl md:text-3xl mx-4 cursor-pointer"
           />
         </Link>
-        <Link href="">
+        <Link href="https://twitter.com/NetDeliverySA">
           <AiFillTwitterCircle className="text-2xl md:text-3xl mx-4 cursor-pointer" />
         </Link>
-        <Link href="">
+        <Link href="https://www.instagram.com/netdeliverysa/">
           <AiOutlineInstagram className="text-2xl md:text-3xl mx-4 cursor-pointer" />
         </Link>
       </div>
@@ -52,7 +52,7 @@ const Signature = () => {
       </div>
       <div className={style.infoNav}>
         {/* <h2 className={style.info}>Do not sell my info (California)</h2> */}
-        <h2 className={style.info}>© 2022 Uber Technologies Inc.</h2>
+        <h2 className={style.info}>© 2022 NetDelivery (Pty) Ltd</h2>
       </div>
     </div>
   );

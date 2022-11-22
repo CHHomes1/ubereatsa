@@ -4,17 +4,21 @@ import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
 import Link from "next/link";
 import Image from "next/image";
-import { AiFillApple, AiFillAndroid } from "react-icons/ai";
 import useWindowSize from "../../hooks/useWindowSize";
+import ContactUs from "../Modal/ContactUs";
+import RestaurantRegister from "../Modal/RestaurantRegister";
+import DriverRegister from "../Modal/DriverRegister";
+import { GiTriquetra } from "react-icons/gi";
 const NavDrawer = () => {
   const { width } = useWindowSize();
+  const [Contact, setContact] = React.useState(false);
   const [state, setState] = React.useState({
     right: false,
   });
   const toggleDrawer = (anchor, open) => (event) => {
     if (
       event.type === "keydown" &&
-      (event.key === "Tab" || event.key === "Shift")
+      (event.key === "Tab" || event.key === "Shift"||event.key === "a"||event.key === "A" || event.key === "q"||event.key === "Q"||event.key === "w"||event.key === "W" || event.key === "e"||event.key === "E"||event.key === "t"||event.key === "T" || event.key === "y"||event.key === "Y"||event.key === "u"||event.key === "U" || event.key === "i"||event.key === "I" ||event.key === "p"||event.key === "P" || event.key === "s"||event.key === "S"||event.key === "d"||event.key === "D" || event.key === "f"||event.key === "F"||event.key === "g"||event.key === "G" || event.key === "h"||event.key === "H"||event.key === "j"||event.key === "J" || event.key === "k"||event.key === "K"||event.key === "l"||event.key === "L" || event.key === "z"||event.key === "Z"||event.key === "x"||event.key === "X" || event.key === "c"||event.key === "C"||event.key === "v"||event.key === "V" || event.key === "b"||event.key === "B"||event.key === "n"||event.key === "N" || event.key === "m"||event.key === "M"||event.key === "1"||event.key === "2" || event.key === "3"||event.key === "4"||event.key === "5"||event.key === "6" || event.key === "7"||event.key === "8"||event.key === "9"||event.key === "0" || event.key === "-"||event.key === "="||event.key === "]"||event.key === "]" || event.key === ";"||event.key === "'"||event.key === ","||event.key === "." || event.key === "/"||event.key === "Space"||event.key === "Alt"||event.key === "Window" || event.key === "Windows"||event.key === "Up"||event.key === "Down"||event.key === "Right" || event.key === "Left")
     ) {
       return;
     }
@@ -25,6 +29,7 @@ const NavDrawer = () => {
   const list = (anchor) => (
     <Box
       sx={{
+        zIndex: "0",
         color: "rgb(0,0,0)",
         backgroundColor: "rgb(255, 255, 255)",
         width:
@@ -42,59 +47,36 @@ const NavDrawer = () => {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {/* heading of the website */}
         <div
           className="text-center text-3xl tracking-widest"
           style={{ fontFamily: "Poppins, serif" }}
-        >
-          {/* <img src={`${signature}`} alt="" /> */}
-        </div>
+        ></div>
         <div
           className="h-[10vh] flex my-2 text-xl w-[100%] justify-center scale-y-[0.5] scale-x-[1] md:scale-x-[0.95] md:scale-y-[0.4]"
           style={{ fontFamily: "Poppins, serif" }}
-        >
-          {/* <Image width={180} height={100} src="/logo.png" /> */}
-        </div>
-        {/* BELOEW ARRAY HAS THE LIST OF THE TEXTS THAT IS RENDERED AS A LIST */}
+        ></div>
 
         <div className="h-[60vh]" style={{ fontFamily: "Poppins, serif" }}>
-          {/* <div className="cursor-pointer hover:opacity-[0.85] py-2 bg-amber-400 px-4 py-3 md:px-5 md:py-3 text-white text-center mx-5 rounded my-2">
-            Sign up
+          <div className="tracking-normal cursor-pointer py-0 my-3 mx-5 text-xs sm:text-lg md:text-md hover:border-black border-b-[1px] border-transparent max-w-fit ">
+            {<RestaurantRegister footer={true} />}
           </div>
-          <div className="cursor-pointer hover:opacity-[0.85] py-2 bg-gray-200 px-4 py-3 md:px-5 md:py-3 text-black mx-5 rounded text-center my-2">
-            Login
-          </div> */}
-          <div className="tracking-normal cursor-pointer py-2 mx-5 text-xs sm:text-lg md:text-md hover:border-black border-b-[1px] border-transparent max-w-fit ">
-            Signup as Restaurant Partner
+          <div className="tracking-normal cursor-pointer py-0 my-3 mx-5 text-xs sm:text-lg md:text-md hover:border-black border-b-[1px] border-transparent max-w-fit ">
+            <p>
+              <DriverRegister footer={true} />
+            </p>
           </div>
-          <div className="tracking-normal cursor-pointer py-2 mx-5 text-xs sm:text-lg md:text-md hover:border-black border-b-[1px] border-transparent max-w-fit ">
-            Signup as Courier Partner
-          </div>
-          <div className="tracking-normal cursor-pointer py-2 mx-5 text-xs sm:text-lg md:text-md hover:border-black border-b-[1px] border-transparent max-w-fit ">
-            Sign up to driver
+          <div className="tracking-normal cursor-pointer py-0 my-3 mx-5 text-xs sm:text-lg md:text-md hover:border-black border-b-[1px] border-transparent max-w-fit ">
+            <ContactUs footer={true} />
           </div>
         </div>
         {/* adding the logo */}
         <div className="mt-auto">
-          {/* <div className="mx-4">
-            <Image width={200} height={200} src="/logo.png" />
-          </div> */}
-          {/* adding the store button container */}
-          <h2 className="text-xs md:text-sm mx-auto text-center font-semibold" style={{ fontFamily: "Poppins, serif" }}>
+          <h2
+            className="text-xs md:text-sm mx-auto text-center font-semibold"
+            style={{ fontFamily: "Poppins, serif" }}
+          >
             Download our app below
           </h2>
-          {/* <div className="flex my-8">
-            <div className="flex items-center justify-center bg-gray-200 rounded-full px-3 py-2 md:px-4 md:py-2 mx-1 hover:opacity-[0.75] cursor-pointer">
-              <AiFillApple className="" />
-              <button className="">iPhone</button>
-            </div>
-
-            <div className="flex items-center justify-center bg-gray-200 rounded-full px-3 py-2 md:px-4 md:py-2 mx-1 hover:opacity-[0.75] cursor-pointer">
-              <AiFillAndroid className="" />
-              <button className="">Andriod</button>
-            </div>
-          </div> */}
-          {/* adding the play store and apps store buttons */}
           <div className="flex md:flex-row mb-7 mt-7 items-center justify-around w-[90%] md:w-[70%] mx-auto">
             <Link href="https://play.google.com/store/apps/details?id=com.restaurants.netdelivery">
               <div className="my-2 mx-1">
@@ -139,6 +121,10 @@ const NavDrawer = () => {
               anchor={anchor}
               open={state[anchor]}
               onClose={toggleDrawer(anchor, false)}
+              // hideBackdrop={true}
+              style={{
+                zIndex: 0,
+              }}
             >
               {list(anchor)}
             </Drawer>

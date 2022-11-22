@@ -7,7 +7,7 @@ import DriverRegister from "../Modal/DriverRegister";
 import RestaurantRegister from "../Modal/RestaurantRegister";
 const style = {
   wrapper: "border-t-2 border-gray-200 ml-0",
-  footerNav: "flex flex-col md:flex-row mt-8 md:mt-24 w-[100%]",
+  footerNav: "flex flex-col md:flex-row mt-8 md:mt-24 w-[100%] p-3",
   uber: "text-2xl md:text-4xl my-8 md:my-2",
   eats: "font-semibold",
   btnContainer: "flex md:flex-row mb-7 mt-7 justify-around",
@@ -16,8 +16,8 @@ const style = {
     "flex flex-col md:flex-row md:w-[50%] md:items-start md:justify-center",
   col1: "md:w-[50%] flex flex-col items-start justify-start",
   col2: "md:w-[50%] flex flex-col items-start justify-start",
-  list: "text-stone-800 decoration-none list-none my-2 cursor-pointer   max-w-fit ",
-  list1: "text-stone-800 decoration-none list-none my-2 cursor-pointer    max-w-fit ",
+  list: "text-stone-800 decoration-none list-none my-2 cursor-pointer  ",
+  list1: "text-stone-800 decoration-none list-none my-2 cursor-pointer     ",
 };
 const Footer = () => {
   return (
@@ -57,8 +57,10 @@ const Footer = () => {
             </li>
           </div>
           <div className={style.col2}>
-            <li className={style.list1}>Restaurants Near Me</li>
-            <li className={style.list1}>View all cities</li>
+            <Link href="https://netdelivery.co.za/admin/privacy-policy">
+            <li className={style.list1}>Privacy Policy</li>
+            </Link>
+            <li className={style.list1}>Help</li>
           </div>
         </div>
       </div>
