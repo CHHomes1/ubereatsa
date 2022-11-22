@@ -6,7 +6,8 @@ import styled from "styled-components";
 import Image from "next/image";
 function MyApp({ Component, pageProps }) {
   const FeaturedBackground1 = styled.div`
-    background: radial-gradient(rgba(0, 0, 0,0), rgba(0, 0, 0,0)), url("/k.png");
+    background: radial-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+      url("/k.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -16,7 +17,7 @@ function MyApp({ Component, pageProps }) {
     margin: 10px 0px;
   `;
   const [Browser, setBrowser] = useState("");
- 
+
   useEffect(() => {
     function getMobileOperatingSystem() {
       let userAgent = navigator.userAgent || navigator.vendor || window.opera;
@@ -34,10 +35,7 @@ function MyApp({ Component, pageProps }) {
   }, []);
   console.log(Browser);
   return (
-    <div
-      className="overflow-x-hidden"
-      style={{ fontFamily: "Poppins,serif" }}
-    >
+    <div className="overflow-x-hidden" style={{ fontFamily: "Poppins,serif" }}>
       {Browser == "iOS" && (
         <div className="flex items-center justify-center my-12 flex-col">
           <FeaturedBackground1 />
@@ -85,11 +83,20 @@ function MyApp({ Component, pageProps }) {
           <h2 className="font-semibold text-3xl text-center my-8">
             Great Deals are in the app
           </h2>
-          <Link href="/">
-            <button className="bg-black px-8 py-2 hover:opacity-[0.85] text-white rounded my-3">
-              Continue in app
-            </button>
-          </Link>
+          {Browser == "Android" && (
+            <Link href="https://play.google.com/store/apps/details?id=com.restaurants.netdelivery">
+              <button className="bg-black px-8 py-2 hover:opacity-[0.85] text-white rounded my-3">
+                Continue in app
+              </button>
+            </Link>
+          )}
+          {Browser == "iOS" && (
+            <Link href="https://apps.apple.com/us/app/netdelivery/id1641589963">
+              <button className="bg-black px-8 py-2 hover:opacity-[0.85] text-white rounded my-3">
+                Continue in app
+              </button>
+            </Link>
+          )}
 
           <button
             onClick={() => setBrowser("")}
@@ -107,5 +114,3 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default MyApp;
-
-
