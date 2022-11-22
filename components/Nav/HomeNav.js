@@ -41,7 +41,7 @@ const HomeNav = ({ Visibility }) => {
       style={{ fontFamily: "Poppins,serif", zIndex: 20 }}
     >
       {/* adding the logo */}
-      <Image width={180} height={180} src="/logo.png" />
+      <Image width={240} height={240} src="/logo.png" />
       <div className={style.addressContainer}>
         {/* <div className={style.loginContainer}>
           <RiAccountCircleFill className="mr-3 text-xl md:text-xl" />
