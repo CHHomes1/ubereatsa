@@ -53,7 +53,7 @@ const NavDrawer = () => {
           className="h-[10vh] flex my-2 text-xl w-[100%] justify-center scale-y-[0.5] scale-x-[1] md:scale-x-[0.95] md:scale-y-[0.4]"
           style={{ fontFamily: "Poppins, serif" }}
         >
-          <Image width={180} height={100} src="/logo.png" />
+          {/* <Image width={180} height={100} src="/logo.png" /> */}
         </div>
         {/* BELOEW ARRAY HAS THE LIST OF THE TEXTS THAT IS RENDERED AS A LIST */}
 
@@ -64,13 +64,13 @@ const NavDrawer = () => {
           <div className="cursor-pointer hover:opacity-[0.85] py-2 bg-gray-200 px-4 py-3 md:px-5 md:py-3 text-black mx-5 rounded text-center my-2">
             Login
           </div> */}
-          <div className="tracking-normal cursor-pointer py-2 mx-5 text-xs sm:text-lg md:text-sm hover:border-black border-b-[1px] border-transparent max-w-fit ">
+          <div className="tracking-normal cursor-pointer py-2 mx-5 text-xs sm:text-lg md:text-md hover:border-black border-b-[1px] border-transparent max-w-fit ">
             Signup as Restaurant Partner
           </div>
-          <div className="tracking-normal cursor-pointer py-2 mx-5 text-xs sm:text-lg md:text-sm hover:border-black border-b-[1px] border-transparent max-w-fit ">
+          <div className="tracking-normal cursor-pointer py-2 mx-5 text-xs sm:text-lg md:text-md hover:border-black border-b-[1px] border-transparent max-w-fit ">
             Signup as Courier Partner
           </div>
-          <div className="tracking-normal cursor-pointer py-2 mx-5 text-xs sm:text-lg md:text-sm hover:border-black border-b-[1px] border-transparent max-w-fit ">
+          <div className="tracking-normal cursor-pointer py-2 mx-5 text-xs sm:text-lg md:text-md hover:border-black border-b-[1px] border-transparent max-w-fit ">
             Sign up to driver
           </div>
         </div>
@@ -80,7 +80,7 @@ const NavDrawer = () => {
             <Image width={200} height={200} src="/logo.png" />
           </div> */}
           {/* adding the store button container */}
-          <h2 className="text-xs mx-auto text-center font-semibold" style={{ fontFamily: "Poppins, serif" }}>
+          <h2 className="text-xs md:text-sm mx-auto text-center font-semibold" style={{ fontFamily: "Poppins, serif" }}>
             Download our app below
           </h2>
           {/* <div className="flex my-8">
