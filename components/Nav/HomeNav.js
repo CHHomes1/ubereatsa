@@ -14,7 +14,7 @@ const HomeNav = ({ Visibility }) => {
     }`,
     nameContainer: `${
       !Visibility ? "hidden sm:flex" : "flex"
-    }  items-center justify-center mx-4 md: mx-0 md:mr-12`,
+    }  items-center justify-center mx-4 md:mx-0 mr-4 md:mr-0`,
     uber: "text-xl md:text-3xl",
     eats: "font-semibold",
     btnContainer: "flex items-end justify-end w-[50%]",

@@ -8,7 +8,7 @@ import {
 } from "react-icons/ai";
 const style = {
   wrapper:
-    "flex flex-col md:flex-row items-start md:items-start md:mt-16 md:mb-24 md:w-[100%] border-t-2 border-gray-200 py-7 md:p-7",
+    "flex flex-col md:flex-row items-start md:items-start md:mt-16 mb-3 md:mb-6 md:w-[100%] border-t-2 border-gray-200 py-5 md:p-7",
   social: "flex md:w-[30%]",
   nav: " md:w-[50%]",
   list: "mr-8 md:mx-5 text-xs text-stone-800 decoration-none list-none my-7 cursor-pointer hover:border-stone-800 border-b-[1px]  border-transparent max-w-fit",

@@ -4,7 +4,7 @@ import DriverRegister from "../Modal/DriverRegister";
 import Image from "next/image";
 import Link from "next/link";
 const style = {
-  wrapper: "flex w-[90%] md:w-[50%] mx-auto justify-between items-center my-7",
+  wrapper: "flex w-[90%] md:w-[50%] mx-auto justify-between items-center mb-16 md:mb-36 my-7",
   left: "",
   right: "",
   btnContainer: "flex md:flex-row mb-7 mt-7 justify-around",

@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Signature from "./Signature";
 import ContactUs from "../Modal/ContactUs";
-import DriverRegister from "../Modal/ContactUs";
+import DriverRegister from "../Modal/DriverRegister";
 import RestaurantRegister from "../Modal/RestaurantRegister";
 const style = {
   wrapper: "border-t-2 border-gray-200 ml-0",
@@ -16,8 +16,8 @@ const style = {
     "flex flex-col md:flex-row md:w-[50%] md:items-start md:justify-center",
   col1: "md:w-[50%] flex flex-col items-start justify-start",
   col2: "md:w-[50%] flex flex-col items-start justify-start",
-  list: "text-stone-800 decoration-none list-none my-2 cursor-pointer   max-w-fit underline",
-  list1: "text-stone-800 decoration-none list-none my-2 cursor-pointer    max-w-fit underline",
+  list: "text-stone-800 decoration-none list-none my-2 cursor-pointer   max-w-fit ",
+  list1: "text-stone-800 decoration-none list-none my-2 cursor-pointer    max-w-fit ",
 };
 const Footer = () => {
   return (
@@ -47,17 +47,17 @@ const Footer = () => {
         <div className={style.right}>
           <div className={style.col1}>
             <li className={style.list}>
-              <RestaurantRegister />
+              <RestaurantRegister footer={true}/>
             </li>
             <li className={style.list}>
-              <DriverRegister />
+              <DriverRegister footer={true}/>
             </li>
             <li className={style.list}>
-              <ContactUs />
+              <ContactUs footer={true}/>
             </li>
           </div>
           <div className={style.col2}>
-            <li className={style.list1}>Restaurants Neat Me</li>
+            <li className={style.list1}>Restaurants Near Me</li>
             <li className={style.list1}>View all cities</li>
           </div>
         </div>
