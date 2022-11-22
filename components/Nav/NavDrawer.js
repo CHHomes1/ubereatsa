@@ -31,7 +31,7 @@ const NavDrawer = () => {
           anchor === "top" || anchor === "bottom"
             ? "auto"
             : width < 500
-            ? 260
+            ? 240
             : width > 500 && width < 1000
             ? 380
             : 350,
@@ -53,7 +53,7 @@ const NavDrawer = () => {
           className="h-[10vh] flex my-2 text-xl w-[100%] justify-center scale-y-[0.5] scale-x-[1] md:scale-x-[0.95] md:scale-y-[0.4]"
           style={{ fontFamily: "Poppins, serif" }}
         >
-          <Image width={200} height={100} src="/logo.png" />
+          <Image width={180} height={100} src="/logo.png" />
         </div>
         {/* BELOEW ARRAY HAS THE LIST OF THE TEXTS THAT IS RENDERED AS A LIST */}
 
