@@ -123,7 +123,7 @@ const NavDrawer = () => {
               onClose={toggleDrawer(anchor, false)}
               // hideBackdrop={true}
               style={{
-                zIndex: 0,
+                zIndex: 20,
               }}
             >
               {list(anchor)}

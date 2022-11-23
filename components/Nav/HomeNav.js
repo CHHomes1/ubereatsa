@@ -38,7 +38,7 @@ const HomeNav = ({ Visibility }) => {
   return (
     <div
       className={style.wrapper}
-      style={{ fontFamily: "Poppins,serif", zIndex: 10 }}
+      style={{ fontFamily: "Poppins,serif", zIndex: 5 }}
     >
       {/* adding the logo */}
       <Image width={240} height={240} src="/logo.png" />

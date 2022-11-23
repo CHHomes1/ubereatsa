@@ -9,7 +9,7 @@ export default function Main() {
   return (
     <div className={style.container}>
       <Head>
-        <title>Uber Eats Website</title>
+        <title>NetDelivery | Food Delivery, Order and Enjoy</title>
         <meta name="description" content="An website for ubereats" />
         <link rel="icon" href="/favicon.png" />
       </Head>
