@@ -7,12 +7,15 @@ import NavDrawer from "./NavDrawer";
 import Image from "next/image";
 const HomeNav = ({ Visibility }) => {
   const style = {
-    wrapper: `fixed flex items-center justify-between ${
-      !Visibility ? "justify-center md:justify-between" : ""
+    wrapper: `fixed flex items-center   ${
+      !Visibility ? "justify-center md:justify-between" : "justify-between"
     }   w-[100%] h-[10vh] md:px-12 ${
       Visibility ? "bg-transparent" : "bg-white"
     }`,
     nameContainer: `${
+      !Visibility ? "hidden sm:flex" : "flex"
+    }  items-center justify-center mx-4 md:mx-0 mr-4 md:mr-0`,
+    logo: `${
       !Visibility ? "hidden sm:flex" : "flex"
     }  items-center justify-center mx-4 md:mx-0 mr-4 md:mr-0`,
     uber: "text-xl md:text-3xl",
@@ -41,7 +44,9 @@ const HomeNav = ({ Visibility }) => {
       style={{ fontFamily: "Poppins,serif", zIndex: 5 }}
     >
       {/* adding the logo */}
-      <Image width={240} height={240} src="/logo.png" />
+      <div className={style.logo}>
+        <Image width={220} height={220} src="/logo.png" />
+      </div>
       <div className={style.addressContainer}>
         {/* <div className={style.loginContainer}>
           <RiAccountCircleFill className="mr-3 text-xl md:text-xl" />
@@ -65,7 +70,7 @@ const HomeNav = ({ Visibility }) => {
         )}
       </div>
       <div className={style.nameContainer}>
-          <NavDrawer />
+        <NavDrawer />
       </div>
     </div>
   );
