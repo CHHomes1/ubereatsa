@@ -22,9 +22,9 @@ const HomeNav = ({ Visibility }) => {
     eats: "font-semibold",
     btnContainer: "flex items-end justify-end w-[50%]",
     addressContainer: "",
-    addressTab: `mx-4 flex w-auto md:w-[45vw] z-40 px-4  bg-white   items-center bg-gray-200 rounded flex `,
+    addressTab: ` mx-4 flex w-auto md:w-[45vw] z-40 px-4 items-center justify-center bg-gray-200 rounded  `,
     input:
-      "placeholder:text-gray-800 outline-none py-2 md:py-3 bg-gray-200 mx-12 md:mx-2",
+      "placeholder:text-gray-800 outline-none py-2 md:py-3 bg-gray-200 mx-12 md:mx-2 w-[100%]",
     loginContainer:
       "cursor-pointer hover:opacity-[0.9] flex items-center justify-center bg-white px-3 py-[0.7rem] md:px-5 py-[1.1rem] rounded-full mx-2 text-sm md:text-md md:mx-5",
     login: "",
@@ -48,17 +48,13 @@ const HomeNav = ({ Visibility }) => {
         <Image width={220} height={220} src="/logo.png" />
       </div>
       <div className={style.addressContainer}>
-        {/* <div className={style.loginContainer}>
-          <RiAccountCircleFill className="mr-3 text-xl md:text-xl" />
-          <h1 className={style.login}>Log in</h1>
-        </div>
-        <button className={style.signup}>Sign up</button> */}
+
         {!Visibility && (
           <div
             className={style.addressTab}
             onClick={() => setAddressClick(true)}
           >
-            <HiLocationMarker className="text-black text-2xl mr-3" />
+            <HiLocationMarker className="text-black text-2xl mr-3 bg-gray-200" />
             <input
               type="text"
               value={Address}

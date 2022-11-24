@@ -48,7 +48,7 @@ const DriverForm = () => {
   const passChangeHanlder = (e) => {
     setPass(e.target.files[0]);
   };
-  console.log(License)
+  console.log(License);
   const submitHandler = (event) => {
     event.preventDefault();
     const sendData = async () => {
@@ -90,6 +90,7 @@ const DriverForm = () => {
     setPhone("");
     setCountry("");
   };
+ 
   return (
     <div className={style.wrapper} style={{ fontFamily: "Poppins,serif" }}>
       <h2 className="text-2xl font-semibold text-black my-4">Get Started</h2>
@@ -792,7 +793,13 @@ const DriverForm = () => {
             </option>
           </optgroup>
         </select>
-        <input type="text" className={style.input2} placeholder="Phone..." value={Phone} onChange={phoneChangeHandler}/>
+        <input
+          type="text"
+          className={style.input2}
+          placeholder="Phone..."
+          value={Phone}
+          onChange={phoneChangeHandler}
+        />
       </div>
       <div className="flex items-center">
         <input
@@ -809,7 +816,9 @@ const DriverForm = () => {
         />
       </div>
 
-      <button className={style.btn} onClick={submitHandler}>Submit</button>
+      <button className={style.btn} onClick={submitHandler}>
+        Submit
+      </button>
     </div>
   );
 };
