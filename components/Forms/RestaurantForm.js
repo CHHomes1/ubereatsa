@@ -756,7 +756,7 @@ const RestaurantForm = () => {
         </select>
         <input type="text" className={style.input3} placeholder='Phone...' />
       </div>
-      {/* <input class="custom-file-input" type="file" id="file" /> */}
+      <input class="custom-file-input" type="file" id="file" />
 
       <button className={style.btn}>Submit</button>
     </div>

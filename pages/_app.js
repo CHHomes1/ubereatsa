@@ -33,7 +33,7 @@ function MyApp({ Component, pageProps }) {
     }
     getMobileOperatingSystem();
   }, []);
-  console.log(Browser);
+  // console.log(Browser);
   return (
     <div className="overflow-x-hidden" style={{ fontFamily: "Poppins,serif" }}>
       {Browser == "iOS" && (

@@ -5,6 +5,7 @@ import Signature from "./Signature";
 import ContactUs from "../Modal/ContactUs";
 import DriverRegister from "../Modal/DriverRegister";
 import RestaurantRegister from "../Modal/RestaurantRegister";
+import Help from "../Modal/Help";
 const style = {
   wrapper: "border-t-2 border-gray-200 ml-0",
   footerNav: "flex flex-col md:flex-row mt-8 md:mt-24 w-[100%] p-3",
@@ -47,20 +48,22 @@ const Footer = () => {
         <div className={style.right}>
           <div className={style.col1}>
             <li className={style.list}>
-              <RestaurantRegister footer={true}/>
+              <RestaurantRegister footer={true} />
             </li>
             <li className={style.list}>
-              <DriverRegister footer={true}/>
+              <DriverRegister footer={true} />
             </li>
             <li className={style.list}>
-              <ContactUs footer={true}/>
+              <ContactUs footer={true} />
             </li>
           </div>
           <div className={style.col2}>
             <Link href="https://netdelivery.co.za/admin/privacy-policy">
-            <li className={style.list1}>Privacy Policy</li>
+              <li className={style.list1}>Privacy Policy</li>
             </Link>
-            <li className={style.list1}>Help</li>
+            <li className={style.list1}>
+              <Help footer={true}/>
+            </li>
           </div>
         </div>
       </div>

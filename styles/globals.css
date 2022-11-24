@@ -36,7 +36,7 @@
 }
 
 .custom-file-input::-webkit-file-upload-button {
-  visibility: hidden;
+  /* visibility: hidden; */
 }
 .custom-file-input::before {
   content: "Upload ID/Passport";
@@ -64,7 +64,7 @@ input[type='file'] {
   color: rgba(0, 0, 0, 0)
 }
 .custom-file-input1::-webkit-file-upload-button {
-  visibility: hidden;
+  /* visibility: hidden; */
 }
 .custom-file-input1::before {
   content: "Driver License";
@@ -89,7 +89,7 @@ input[type='file'] {
   background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
 }
 .custom-file-input2::-webkit-file-upload-button {
-  visibility: hidden;
+  /* visibility: hidden; */
 }
 .custom-file-input2::before {
   content: "ID/Passport";

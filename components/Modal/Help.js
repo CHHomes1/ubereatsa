@@ -4,7 +4,7 @@ import { AiOutlineCloseCircle } from "react-icons/ai";
 import DriverForm from "../Forms/DriverForm";
 import Image from "next/image";
 import Contact from "../Forms/Contact";
-const ContactUs = ({ footer }) => {
+const Help = ({ footer }) => {
   const style = {
     btn: ` ${!footer && "underline"}`,
     modalWrapper: "flex flex-col px-3 py-8 md:px-7 md:py-3 ",
@@ -17,7 +17,7 @@ const ContactUs = ({ footer }) => {
   };
   return (
     <Popup
-      trigger={<button className={style.btn}> Contact us </button>}
+      trigger={<button className={style.btn}> Help </button>}
       modal
       nested
       closeOnDocumentClick="false"
@@ -52,4 +52,4 @@ const ContactUs = ({ footer }) => {
     </Popup>
   );
 };
-export default ContactUs;
+export default Help;

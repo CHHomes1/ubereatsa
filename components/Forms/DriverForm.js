@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import axios from "axios";
 const style = {
   wrapper: "flex flex-col bg-amber-400",
   singleInputContainer: "flex flex-col items-end  my-2 w-[100%] md:w-[100%]",
@@ -15,27 +15,80 @@ const style = {
 const DriverForm = () => {
   const [FirstName, setFirstName] = useState("");
   const [LastName, setLastName] = useState("");
-  const [Id, setId] = useState("");
-  const [Contact, setContact] = useState("");
+  const [Phone, setPhone] = useState("");
   const [Email, setEmail] = useState("");
   const [Passport, setPassport] = useState("");
+  const [Country, setCountry] = useState("");
+  const [License, setLicense] = useState("");
+  const [Pass, setPass] = useState("");
+  const tokenWithWriteAccess =
+    "skewFnihxAOUsF0fDKevgE6ORGcr9RsNKPtTf7ZNE9BQhtuJ2xgxe5lVLHihBWE4uoUjF0BzhzPxkTOesPNNf2kwo55oxVSnM5KvKDL9Ia0DgnqoysrX5HvCMgRQTZqg8y9JGgAH3IE1vd1goOnt4HbORhWH84xvQyJTitN5pxD3F5kjAukR";
   const handleFirstNameChange = (e) => {
     setFirstName(e.target.value);
   };
   const handleLastNameChange = (e) => {
     setLastName(e.target.value);
   };
-  const handleIdChange = (e) => {
-    setId(e.target.value);
-  };
-  const handleContactChange = (e) => {
-    setContact(e.target.value);
+  const handleCountryClick = (e) => {
+    setCountry(e.target.value);
   };
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
-  const handlePassportChange = (e) => {
+  const phoneChangeHandler = (e) => {
+    setPhone(e.target.value);
+  };
+  const idPassNoChange = (e) => {
     setPassport(e.target.value);
+  };
+  const licenseChangeHanlder = (e) => {
+    setLicense(e.target.files[0]);
+    // console.log(e.target.files[0])
+  };
+  const passChangeHanlder = (e) => {
+    setPass(e.target.files[0]);
+  };
+  console.log(License)
+  const submitHandler = (event) => {
+    event.preventDefault();
+    const sendData = async () => {
+      const { data } = await axios.post(
+        `https://k4ves9h0.api.sanity.io/v2021-06-07/data/mutate/production?returnIds=true`,
+        {
+          mutations: [
+            {
+              create: {
+                _type: "driver",
+                createdAt: new Date().toISOString(),
+                firstName: FirstName,
+                lastName: LastName,
+                email: Email,
+                phone: Phone,
+                country: `+${Country}`,
+                id: Passport,
+                license: License,
+                passport: Pass,
+              },
+            },
+          ],
+        },
+        {
+          headers: {
+            "Content-type": "application/json",
+            Authorization: `Bearer ${tokenWithWriteAccess}`,
+          },
+        }
+      );
+    };
+    sendData();
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setLicense("");
+    setPassport("");
+    setPass("");
+    setPhone("");
+    setCountry("");
   };
   return (
     <div className={style.wrapper} style={{ fontFamily: "Poppins,serif" }}>
@@ -46,8 +99,8 @@ const DriverForm = () => {
             type="text"
             className={style.input1}
             placeholder="First Name..."
-            onChange={handleContactChange}
-            value={Contact}
+            onChange={handleFirstNameChange}
+            value={FirstName}
           />
         </div>
         <div className={style.singleInputContainer}>
@@ -66,7 +119,7 @@ const DriverForm = () => {
           type="text"
           className={style.input}
           placeholder="ID/Passport..."
-          onChange={handlePassportChange}
+          onChange={idPassNoChange}
           value={Passport}
         />
       </div>
@@ -85,6 +138,8 @@ const DriverForm = () => {
           name="countryCode"
           id=""
           className="bg-gray-100 rounded w-[50%] p-1 md:w-[44%] mr-3 text-xs"
+          value={Country}
+          onChange={handleCountryClick}
         >
           <option data-countryCode="GB" value="44" Selected>
             UK (+44)
@@ -737,14 +792,24 @@ const DriverForm = () => {
             </option>
           </optgroup>
         </select>
-        <input type="text" className={style.input2} placeholder="Phone..." />
+        <input type="text" className={style.input2} placeholder="Phone..." value={Phone} onChange={phoneChangeHandler}/>
       </div>
       <div className="flex items-center">
-        <input class="custom-file-input1" type="file" id="file" />
-        <input class="custom-file-input2" type="file" id="file" />
+        <input
+          class="custom-file-input1"
+          type="file"
+          id="file"
+          onChange={licenseChangeHanlder}
+        />
+        <input
+          class="custom-file-input2"
+          type="file"
+          id="file"
+          onChange={passChangeHanlder}
+        />
       </div>
 
-      <button className={style.btn}>Submit</button>
+      <button className={style.btn} onClick={submitHandler}>Submit</button>
     </div>
   );
 };

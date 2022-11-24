@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import axios from "axios";
 const style = {
   wrapper: "flex flex-col bg-amber-400",
   singleInputContainer: "flex flex-col items-start my-2 w-[100%] md:w-[100%]",
@@ -12,10 +12,12 @@ const style = {
 const Contact = () => {
   const [FirstName, setFirstName] = useState("");
   const [LastName, setLastName] = useState("");
-  const [Id, setId] = useState("");
-  const [Contact, setContact] = useState("");
   const [Email, setEmail] = useState("");
   const [Message, setMessage] = useState("");
+  const [Phone, setPhone] = useState("");
+  const [Country, setCountry] = useState("44");
+  const tokenWithWriteAccess =
+    "skewFnihxAOUsF0fDKevgE6ORGcr9RsNKPtTf7ZNE9BQhtuJ2xgxe5lVLHihBWE4uoUjF0BzhzPxkTOesPNNf2kwo55oxVSnM5KvKDL9Ia0DgnqoysrX5HvCMgRQTZqg8y9JGgAH3IE1vd1goOnt4HbORhWH84xvQyJTitN5pxD3F5kjAukR";
   const handleFirstNameChange = (e) => {
     setFirstName(e.target.value);
   };
@@ -25,14 +27,51 @@ const Contact = () => {
   const handleMessageChange = (e) => {
     setMessage(e.target.value);
   };
-  const handleContactChange = (e) => {
-    setContact(e.target.value);
-  };
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
-  const handleCVChange = (e) => {
-    setCV(e.target.value);
+  const phoneChangeHandler = (e) => {
+    setPhone(e.target.value);
+  };
+  const countryChangeHandler = (e) => {
+    setCountry(e.target.value);
+  };
+  const submitHandler = (event) => {
+    event.preventDefault();
+    const sendData = async () => {
+      const { data } = await axios.post(
+        `https://k4ves9h0.api.sanity.io/v2021-06-07/data/mutate/production?returnIds=true`,
+        {
+          mutations: [
+            {
+              create: {
+                _type: "contact",
+                createdAt: new Date().toISOString(),
+                firstName: FirstName,
+                lastName: LastName,
+                email: Email,
+                message: Message,
+                phone: Phone,
+                country: `+${Country}`,
+              },
+            },
+          ],
+        },
+        {
+          headers: {
+            "Content-type": "application/json",
+            Authorization: `Bearer ${tokenWithWriteAccess}`,
+          },
+        }
+      );
+    };
+    sendData();
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setMessage("");
+    setPhone("");
+    setCountry("");
   };
   return (
     <div className={style.wrapper} style={{ fontFamily: "Poppins,serif" }}>
@@ -80,6 +119,8 @@ const Contact = () => {
           name="countryCode"
           id=""
           className="bg-gray-100 rounded w-[65%] p-1 md:w-[45%] mr-3 text-xs"
+          value={Country}
+          onChange={countryChangeHandler}
         >
           <option data-countryCode="GB" value="44" Selected>
             UK (+44)
@@ -732,11 +773,19 @@ const Contact = () => {
             </option>
           </optgroup>
         </select>
-        <input type="text" className={style.input} placeholder="Phone..." />
+        <input
+          type="text"
+          className={style.input}
+          placeholder="Phone..."
+          onChange={phoneChangeHandler}
+          value={Phone}
+        />
       </div>
       {/* <input class="custom-file-input" type="file" id="file" /> */}
 
-      <button className={style.btn}>Submit</button>
+      <button className={style.btn} onClick={submitHandler}>
+        Submit
+      </button>
     </div>
   );
 };

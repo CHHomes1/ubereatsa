@@ -8,12 +8,12 @@ import {
 } from "react-icons/ai";
 const style = {
   wrapper:
-    "p-3 flex flex-col md:flex-row items-start md:items-start md:mt-16 mb-3 md:mb-6 md:w-[100%] border-t-2 border-gray-200 py-5 md:p-7",
-  social: "flex md:w-[30%] mx-auto my-3",
+    " flex flex-col md:flex-row items-start md:items-start md:mt-16 mb-3 md:mb-6 md:w-[100%] border-t-2 border-gray-200 py-5 md:p-3",
+  social: "flex md:w-[30%]  my-3 mx-12",
   nav: " md:w-[50%]",
   list: "mr-8 md:mx-5 text-xs text-stone-800 decoration-none list-none my-7 cursor-pointer hover:border-stone-800 border-b-[1px]  border-transparent max-w-fit",
   para: "text-xs text-stone-800 text-start md:text-end",
-  infoNav: "flex flex-col items-end justify-around  md:w-[15%] my-5 md:my-2",
+  infoNav: "flex flex-col items-end justify-around  md:w-[15%] my-5 md:my-2 mx-12",
   info: "text-md text-stone-800",
 };
 const Signature = () => {
@@ -23,14 +23,14 @@ const Signature = () => {
       <div className={style.social}>
         <Link href="https://www.facebook.com/NetDeliverySA">
           <AiFillFacebook
-            className="text-2xl md:text-3xl mx-4 cursor-pointer"
+            className="text-2xl md:text-3xl mr-6 cursor-pointer"
           />
         </Link>
         <Link href="https://twitter.com/NetDeliverySA">
-          <AiFillTwitterCircle className="text-2xl md:text-3xl mx-4 cursor-pointer" />
+          <AiFillTwitterCircle className="text-2xl md:text-3xl mr-6 cursor-pointer" />
         </Link>
         <Link href="https://www.instagram.com/netdeliverysa/">
-          <AiOutlineInstagram className="text-2xl md:text-3xl mx-4 cursor-pointer" />
+          <AiOutlineInstagram className="text-2xl md:text-3xl mr-6 cursor-pointer" />
         </Link>
       </div>
       <div className={style.nav}>

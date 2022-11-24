@@ -5,16 +5,34 @@ import Order from "./Order";
 import Cards from "../Cards/Cards";
 import Footer from "../Footer/Footer";
 import Join from "../Join/Join";
-import { GiConwayLifeGlider } from "react-icons/gi";
+import Andriod from "../App/Andriod";
+import IPhone from "../App/IPhone";
 import VisibilitySensor from "react-visibility-sensor";
 const style = {
   wrapper: "",
 };
 const Home = () => {
+  const [Browser, setBrowser] = useState("");
+
   const [View, setView] = useState(0);
   const [Visibility, setVisibility] = useState(false);
   useEffect(() => {
     setView(window.innerWidth);
+  }, []);
+  useEffect(() => {
+    function getMobileOperatingSystem() {
+      let userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      if (/windows phone/i.test(userAgent)) {
+      }
+      if (/android/i.test(userAgent)) {
+        setBrowser("Android");
+      }
+      if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        setBrowser("iOS");
+      }
+      return "unknown";
+    }
+    getMobileOperatingSystem();
   }, []);
   const FeaturedBackground1 = styled.div`
     background: radial-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
@@ -39,6 +57,8 @@ const Home = () => {
         <VisibilitySensor onChange={onChange}>
           <Order />
         </VisibilitySensor>
+        {Browser == "iOS" && <IPhone />}
+        {Browser == "Android" && <Andriod />}
         <Cards />
         <Join />
         <Footer />
