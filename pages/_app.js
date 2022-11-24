@@ -54,7 +54,7 @@ function MyApp({ Component, pageProps }) {
             Great Deals are in the app
           </h2>
           <Link href="https://apps.apple.com/us/app/netdelivery/id1641589963">
-            <button className="bg-black px-8 py-2 hover:opacity-[0.85] text-white rounded my-3">
+            <button className="bg-amber-400 px-8 py-2 hover:opacity-[0.85] text-white rounded my-3">
               Continue in app
             </button>
           </Link>
@@ -85,18 +85,12 @@ function MyApp({ Component, pageProps }) {
           </h2>
           {Browser == "Android" && (
             <Link href="https://play.google.com/store/apps/details?id=com.restaurants.netdelivery">
-              <button className="bg-black px-8 py-2 hover:opacity-[0.85] text-white rounded my-3">
+              <button className="bg-amber-400 px-8 py-2 hover:opacity-[0.85] text-white rounded my-3">
                 Continue in app
               </button>
             </Link>
           )}
-          {Browser == "iOS" && (
-            <Link href="https://apps.apple.com/us/app/netdelivery/id1641589963">
-              <button className="bg-black px-8 py-2 hover:opacity-[0.85] text-white rounded my-3">
-                Continue in app
-              </button>
-            </Link>
-          )}
+    
 
           <button
             onClick={() => setBrowser("")}
