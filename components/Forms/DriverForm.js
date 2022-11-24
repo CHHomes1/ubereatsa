@@ -58,16 +58,16 @@ const DriverForm = () => {
           mutations: [
             {
               create: {
-                _type: "driver",
-                createdAt: new Date().toISOString(),
-                firstName: FirstName,
-                lastName: LastName,
-                email: Email,
-                phone: Phone,
-                country: `+${Country}`,
-                id: Passport,
+                _type: "filea",
+                // createdAt: new Date().toISOString(),
+                // firstName: FirstName,
+                // lastName: LastName,
+                // email: Email,
+                // phone: Phone,
+                // country: `+${Country}`,
+                // id: Passport,
                 license: License,
-                passport: Pass,
+                // passport: Pass,
               },
             },
           ],
@@ -90,7 +90,7 @@ const DriverForm = () => {
     setPhone("");
     setCountry("");
   };
- 
+
   return (
     <div className={style.wrapper} style={{ fontFamily: "Poppins,serif" }}>
       <h2 className="text-2xl font-semibold text-black my-4">Get Started</h2>

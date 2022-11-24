@@ -8,12 +8,12 @@ import {
 } from "react-icons/ai";
 const style = {
   wrapper:
-    " flex flex-col md:flex-row items-start md:items-start md:mt-16 mb-3 md:mb-6 md:w-[100%] border-t-2 border-gray-200 py-5 md:p-3",
-  social: "flex md:w-[30%]  my-3 mx-12",
+    " flex flex-col md:flex-row items-start md:items-start md:mt-16 mb-3 md:mb-6 md:w-[100%] border-t-2 border-gray-200 py-5 p-3 md:p-3",
+  social: "flex md:w-[30%] my-3 mx-0 md:mx-12",
   nav: " md:w-[50%]",
   list: "mr-8 md:mx-5 text-xs text-stone-800 decoration-none list-none my-7 cursor-pointer hover:border-stone-800 border-b-[1px]  border-transparent max-w-fit",
   para: "text-xs text-stone-800 text-start md:text-end",
-  infoNav: "flex flex-col items-end justify-around  md:w-[15%] my-5 md:my-2 mx-12",
+  infoNav: "flex flex-col items-end justify-around  md:w-[40%] my-5 md:my-2 mx-0 md:mx-12",
   info: "text-md text-stone-800",
 };
 const Signature = () => {
