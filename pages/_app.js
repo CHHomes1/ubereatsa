@@ -53,7 +53,7 @@ function MyApp({ Component, pageProps }) {
           <h2 className="font-semibold text-3xl text-center my-8">
             Great Deals are in the app
           </h2>
-          <Link href="/https://apps.apple.com/us/app/netdelivery/id1641589963">
+          <Link href="https://apps.apple.com/us/app/netdelivery/id1641589963">
             <button className="bg-black px-8 py-2 hover:opacity-[0.85] text-white rounded my-3">
               Continue in app
             </button>
