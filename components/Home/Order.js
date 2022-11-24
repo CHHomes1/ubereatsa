@@ -35,7 +35,7 @@ const Order = (props) => {
     >
       {" "}
       <VisibilitySensor onChange={onChange}>
-        <h3 className=" pb-2 text-transparent">A</h3>
+        <h3 className=" pb-12 text-transparent">A</h3>
       </VisibilitySensor>
       <h2 className={style.heading}>Check if your area is covered</h2>
       <div className={style.orderTab}>
