@@ -46,21 +46,22 @@ const Home = () => {
     height: 100vh;
     width: 100vw;
   `;
-  function onChange(isVisible) {
-    setVisibility(isVisible);
-    console.log(isVisible);
-  }
+  // function onChange(isVisible) {
+  //   setVisibility(isVisible);
+  //   console.log(isVisible);
+  // }
+  const handleVis = (value) => {
+    setVisibility(value);
+  };
   return (
     <FeaturedBackground1 className={style.wrapper}>
       {/* adding the nav */}
       <div className="flex flex-col">
         <HomeNav Visibility={Visibility} />
-        <VisibilitySensor onChange={onChange}>
-          <Order />
-        </VisibilitySensor>
+        <Order handleVis={handleVis} />
+        {/* <VisibilitySensor onChange={onChange}></VisibilitySensor> */}
         {Browser == "iOS" && <IPhone />}
         {Browser == "Android" && <Andriod />}
-
         <Cards />
         <Join />
         <Footer />
