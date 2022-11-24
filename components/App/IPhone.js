@@ -19,7 +19,7 @@ const IPhone = () => {
           <Image src="/favicon.png" width={80} height={80} />
         </div>
         <h2 className={style.heading}>
-          There's more to love in the Andriod app.
+          There's more to love in the Apple app.
         </h2>
       </div>
       <Link href="https://apps.apple.com/us/app/netdelivery/id1641589963">
