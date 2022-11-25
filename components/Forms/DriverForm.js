@@ -48,7 +48,6 @@ const DriverForm = () => {
   const passChangeHanlder = (e) => {
     setPass(e.target.files[0]);
   };
-  console.log(License);
   const submitHandler = (event) => {
     event.preventDefault();
     const sendData = async () => {

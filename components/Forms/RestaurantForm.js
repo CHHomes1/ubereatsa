@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-
+import axios from "axios";
+import client from "../../pages/api/client";
+import { basename } from "path";
+import { createReadStream } from "fs";
 const style = {
   wrapper: "flex flex-col bg-amber-400",
   singleInputContainer: "flex flex-col items-start my-2 w-[100%] md:w-[100%]",
@@ -17,39 +20,118 @@ const style = {
 const RestaurantForm = () => {
   const [FirstName, setFirstName] = useState("");
   const [LastName, setLastName] = useState("");
-  const [Id, setId] = useState("");
-  const [Contact, setContact] = useState("");
+  const [SName, setSName] = useState("");
+  const [SAddress, setSAddress] = useState("");
+  const [Floor, setFloor] = useState("");
+  const [Country, setCountry] = useState("44");
+  const [Phone, setPhone] = useState("");
   const [Email, setEmail] = useState("");
-  const [Address, handleAddressChange] = useState("");
+  const [File, setFile] = useState("");
+  const tokenWithWriteAccess =
+    "skewFnihxAOUsF0fDKevgE6ORGcr9RsNKPtTf7ZNE9BQhtuJ2xgxe5lVLHihBWE4uoUjF0BzhzPxkTOesPNNf2kwo55oxVSnM5KvKDL9Ia0DgnqoysrX5HvCMgRQTZqg8y9JGgAH3IE1vd1goOnt4HbORhWH84xvQyJTitN5pxD3F5kjAukR";
   const handleFirstNameChange = (e) => {
     setFirstName(e.target.value);
   };
   const handleLastNameChange = (e) => {
     setLastName(e.target.value);
   };
-  const handleIdChange = (e) => {
-    setId(e.target.value);
-  };
-  const handleContactChange = (e) => {
-    setContact(e.target.value);
-  };
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
-  const handleAddressChange1 = (e) => {
-    handleAddressChange(e.target.value);
+  const handleSNameChange = (e) => {
+    setSName(e.target.value);
+  };
+  const handleSAddressChange = (e) => {
+    setSAddress(e.target.value);
+  };
+  const handleFloorChange = (e) => {
+    setFloor(e.target.value);
+  };
+  const handleCountryChange = (e) => {
+    setCountry(e.target.value);
+  };
+  const handlePhoneChange = (e) => {
+    setPhone(e.target.value);
+  };
+  const handleFileChange = (e) => {
+    setFile(e.target.value);
+  };
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+    const sendData = async () => {
+      const { data } = await axios.post(
+        `https://k4ves9h0.api.sanity.io/v2021-06-07/data/mutate/production?returnIds=true`,
+        {
+          mutations: [
+            {
+              create: {
+                _type: "restaurant",
+                createdAt: new Date().toISOString(),
+                firstName: FirstName,
+                lastName: LastName,
+                email: Email,
+                store: SName,
+                address: SAddress,
+                floor: Floor,
+                phone: Phone,
+                country: `+${Country}`,
+                passport: File,
+              },
+            },
+          ],
+        },
+        {
+          headers: {
+            "Content-type": "application/json",
+            Authorization: `Bearer ${tokenWithWriteAccess}`,
+          },
+        }
+      );
+    };
+    client.assets
+      .upload("file", createReadStream(File), {
+        filename: basename(File),
+      })
+      .then((fileAsset) => {
+        return client
+          .patch("passport")
+          .set({
+            theImageField: {
+              _type: "file",
+              asset: {
+                _type: "reference",
+                _ref: fileAsset._id,
+              },
+            },
+          })
+          .commit();
+      })
+      .then(() => {
+        console.log("Done!");
+      });
+    sendData();
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setSName("");
+    setSAddress("");
+    setFloor("");
+    setPhone("");
+    setCountry("");
+    setFile("");
   };
   return (
     <div className={style.wrapper} style={{ fontFamily: "Poppins,serif" }}>
-            <h2 className="text-2xl font-semibold text-black my-4">Get Started</h2>
+      <h2 className="text-2xl font-semibold text-black my-4">Get Started</h2>
 
       <div className={style.singleInputContainer}>
         <input
           type="text"
           className={style.input}
           placeholder="Store Name..."
-          onChange={handleFirstNameChange}
-          value={FirstName}
+          onChange={handleSNameChange}
+          value={SName}
         />
       </div>
       <div className={style.singleInputContainer}>
@@ -57,8 +139,8 @@ const RestaurantForm = () => {
           type="text"
           className={style.input}
           placeholder="Store Address..."
-          onChange={handleAddressChange1}
-          value={Address}
+          onChange={handleSAddressChange}
+          value={SAddress}
         />
       </div>
       <div className={style.singleInputContainer}>
@@ -66,8 +148,8 @@ const RestaurantForm = () => {
           type="text"
           className={style.input}
           placeholder="Floor/Suite (Optional).."
-          onChange={handleIdChange}
-          value={Id}
+          onChange={handleFloorChange}
+          value={Floor}
         />
       </div>
       <div className="flex justify-between">
@@ -76,8 +158,8 @@ const RestaurantForm = () => {
             type="text"
             className={style.input1}
             placeholder="First Name..."
-            onChange={handleContactChange}
-            value={Contact}
+            onChange={handleFirstNameChange}
+            value={FirstName}
           />
         </div>
         <div className={style.singleInputContainer1}>
@@ -102,7 +184,13 @@ const RestaurantForm = () => {
       </div>
       {/* ADDING THE PHONE */}
       <div className="flex my-4">
-        <select name="countryCode" id="" className="bg-gray-100 rounded w-[50%] p-1 md:w-[44%] mr-3 text-xs">
+        <select
+          name="countryCode"
+          id=""
+          className="bg-gray-100 rounded w-[50%] p-1 md:w-[44%] mr-3 text-xs"
+          value={Country}
+          onChange={handleCountryChange}
+        >
           <option data-countryCode="GB" value="44" Selected>
             UK (+44)
           </option>
@@ -754,11 +842,25 @@ const RestaurantForm = () => {
             </option>
           </optgroup>
         </select>
-        <input type="text" className={style.input3} placeholder='Phone...' />
+        <input
+          type="text"
+          className={style.input3}
+          placeholder="Phone..."
+          value={Phone}
+          onChange={handlePhoneChange}
+        />
       </div>
-      <input class="custom-file-input" type="file" id="file" />
+      <input
+        class="custom-file-input"
+        type="file"
+        id="file"
+        onChange={handleFileChange}
+        // value={File}
+      />
 
-      <button className={style.btn}>Submit</button>
+      <button className={style.btn} onClick={submitHandler}>
+        Submit
+      </button>
     </div>
   );
 };
