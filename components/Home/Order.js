@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { HiLocationMarker } from "react-icons/hi";
 import Link from "next/link";
 import VisibilitySensor from "react-visibility-sensor";
-
+import AddressFound1 from "../Modal/AddressFound";
+import AddressNotFound1 from "../Modal/AddressNotFound";
 const Order = (props) => {
   const [Address, setAddress] = useState("");
   const [AddressClick, setAddressClick] = useState(false);
@@ -27,13 +28,34 @@ const Order = (props) => {
   function onChange(isVisible) {
     props.handleVis(isVisible);
   }
+  const [IsFormClicked, setIsFormClicked] = useState(false);
+  const [AddressFound, setAddressFound] = useState(false);
+  const handleFormSubmit = () => {
+    setAddressFound(false);
+    setIsFormClicked((prev) => !prev);
+    props.FeaturedData[0].array.map((one) => {
+      let a = one.toUpperCase();
+      let b = Address.toUpperCase();
+      if (a === b) {
+        setAddressFound(true);
+      }
+    });
+  };
+
   return (
     <div
       className={style.wrapper}
       style={{ fontFamily: "Poppins,serif" }}
       //   onClick={() => setAddressClick(false)}
     >
-      {" "}
+      <AddressFound1
+        close={() => setIsFormClicked(false)}
+        Open={IsFormClicked && AddressFound}
+      />
+      <AddressNotFound1
+        close={() => setIsFormClicked(false)}
+          Open={IsFormClicked && !AddressFound}
+      />
       <VisibilitySensor onChange={onChange}>
         <h3 className=" pb-12 bg-transparent w-[1vh] h-[1vw]"></h3>
       </VisibilitySensor>
@@ -49,7 +71,9 @@ const Order = (props) => {
             className={style.input}
           />
         </div>
-        <button className={style.btn}>Check Coverage</button>
+        <button className={style.btn} onClick={handleFormSubmit}>
+          Check Coverage
+        </button>
       </div>
     </div>
   );

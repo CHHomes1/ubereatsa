@@ -7,7 +7,7 @@ import Footer from "../Footer/Footer";
 import Join from "../Join/Join";
 import Andriod from "../App/Andriod";
 import IPhone from "../App/IPhone";
-import VisibilitySensor from "react-visibility-sensor";
+import client from '../../pages/api/client'
 const style = {
   wrapper: "",
 };
@@ -18,6 +18,14 @@ const Home = () => {
   const [Visibility, setVisibility] = useState(false);
   useEffect(() => {
     setView(window.innerWidth);
+  }, []);
+  const [FeaturedData, setFeaturedData] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const p = await client.fetch(`*[_type == "locations"]`);
+      setFeaturedData(p);
+    };
+    fetchData();
   }, []);
   useEffect(() => {
     function getMobileOperatingSystem() {
@@ -57,8 +65,8 @@ const Home = () => {
     <FeaturedBackground1 className={style.wrapper}>
       {/* adding the nav */}
       <div className="flex flex-col">
-        <HomeNav Visibility={Visibility} />
-        <Order handleVis={handleVis} />
+        <HomeNav Visibility={Visibility} FeaturedData={FeaturedData}/>
+        <Order handleVis={handleVis} FeaturedData={FeaturedData}/>
         {/* <VisibilitySensor onChange={onChange}></VisibilitySensor> */}
         {Browser == "iOS" && <IPhone />}
         {Browser == "Android" && <Andriod />}

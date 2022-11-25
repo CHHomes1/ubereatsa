@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RiAccountCircleFill } from "react-icons/ri";
 import { HiLocationMarker } from "react-icons/hi";
-
+import AddressFound1 from "../Modal/AddressFound";
+import AddressNotFound1 from "../Modal/AddressNotFound";
 import NavDrawer from "./NavDrawer";
 import Image from "next/image";
-const HomeNav = ({ Visibility }) => {
+const HomeNav = ({ Visibility, FeaturedData }) => {
   const style = {
     wrapper: `fixed flex items-center   ${
       !Visibility ? "justify-center md:justify-between" : "justify-between"
@@ -31,12 +32,25 @@ const HomeNav = ({ Visibility }) => {
     signup:
       " hover:opacity-[0.9] bg-black text-white px-4 py-[0.7rem] md:px-5 py-[1.1rem] rounded-full mx-2 text-sm md:text-md md:mx-3",
   };
-  // sending the state of menu
-  // props.isMenuClicked(MenuClick)
+
   const [Address, setAddress] = useState("");
   const [AddressClick, setAddressClick] = useState(false);
+  const [IsFormClicked, setIsFormClicked] = useState(false);
   const handleAddressChange = (e) => {
     setAddress(e.target.value);
+  };
+  const [AddressFound, setAddressFound] = useState(false);
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    setAddressFound(false);
+    setIsFormClicked((prev) => !prev);
+    FeaturedData[0].array.map((one) => {
+      let a = one.toUpperCase();
+      let b = Address.toUpperCase();
+      if (a === b) {
+        setAddressFound(true);
+      }
+    });
   };
   return (
     <div
@@ -44,15 +58,23 @@ const HomeNav = ({ Visibility }) => {
       style={{ fontFamily: "Poppins,serif", zIndex: 5 }}
     >
       {/* adding the logo */}
+      <AddressFound1
+        close={() => setIsFormClicked(false)}
+        Open={IsFormClicked && AddressFound}
+      />
+      <AddressNotFound1
+        close={() => setIsFormClicked(false)}
+          Open={IsFormClicked && !AddressFound}
+      />
       <div className={style.logo}>
         <Image width={220} height={220} src="/logo.png" />
       </div>
       <div className={style.addressContainer}>
-
         {!Visibility && (
-          <div
+          <form
             className={style.addressTab}
             onClick={() => setAddressClick(true)}
+            onSubmit={handleFormSubmit}
           >
             <HiLocationMarker className="text-black text-2xl mr-3 bg-gray-200" />
             <input
@@ -62,7 +84,7 @@ const HomeNav = ({ Visibility }) => {
               onChange={handleAddressChange}
               className={style.input}
             />
-          </div>
+          </form>
         )}
       </div>
       <div className={style.nameContainer}>
