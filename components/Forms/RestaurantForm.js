@@ -89,27 +89,27 @@ const RestaurantForm = () => {
         }
       );
     };
-    client.assets
-      .upload("file", createReadStream(File), {
-        filename: basename(File),
-      })
-      .then((fileAsset) => {
-        return client
-          .patch("passport")
-          .set({
-            theImageField: {
-              _type: "file",
-              asset: {
-                _type: "reference",
-                _ref: fileAsset._id,
-              },
-            },
-          })
-          .commit();
-      })
-      .then(() => {
-        console.log("Done!");
-      });
+    // client.assets
+    //   .upload("file", createReadStream(File), {
+    //     filename: basename(File),
+    //   })
+    //   .then((fileAsset) => {
+    //     return client
+    //       .patch("passport")
+    //       .set({
+    //         theImageField: {
+    //           _type: "file",
+    //           asset: {
+    //             _type: "reference",
+    //             _ref: fileAsset._id,
+    //           },
+    //         },
+    //       })
+    //       .commit();
+    //   })
+    //   .then(() => {
+    //     console.log("Done!");
+    //   });
     sendData();
     setFirstName("");
     setLastName("");
