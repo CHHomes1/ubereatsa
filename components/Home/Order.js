@@ -56,9 +56,6 @@ const Order = (props) => {
         close={() => setIsFormClicked(false)}
           Open={IsFormClicked && !AddressFound}
       />
-      <VisibilitySensor onChange={onChange}>
-        <h3 className=" pb-12 bg-transparent w-[1vh] h-[1vw]"></h3>
-      </VisibilitySensor>
       <h2 className={style.heading}>Check if your area is covered</h2>
       <div className={style.orderTab}>
         <div className={style.addressTab} onClick={() => setAddressClick(true)}>
@@ -75,6 +72,9 @@ const Order = (props) => {
           Check Coverage
         </button>
       </div>
+      <VisibilitySensor onChange={onChange}>
+        <h3 className=" pb-12 bg-transparent w-[1vh] h-[1vw]"></h3>
+      </VisibilitySensor>
     </div>
   );
 };

@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Popup from "reactjs-popup";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import Image from "next/image";
-
+import axios from "axios";
 const style = {
   wrapper: "bg-amber-400 flex flex-col py-4 px-6 rounded",
   heading:
@@ -18,6 +18,45 @@ const style = {
 const AddressNotFound = (props) => {
   const closeModal = () => {
     props.close();
+  };
+  const tokenWithWriteAccess =
+    "skewFnihxAOUsF0fDKevgE6ORGcr9RsNKPtTf7ZNE9BQhtuJ2xgxe5lVLHihBWE4uoUjF0BzhzPxkTOesPNNf2kwo55oxVSnM5KvKDL9Ia0DgnqoysrX5HvCMgRQTZqg8y9JGgAH3IE1vd1goOnt4HbORhWH84xvQyJTitN5pxD3F5kjAukR";
+  const [Name, setName] = useState("");
+  const [Email, setEmail] = useState("");
+  const handleNameChange = (e) => {
+    setName(e.target.value);
+  };
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+  const submitHandler = (event) => {
+    event.preventDefault();
+    const sendData = async () => {
+      const { data } = await axios.post(
+        `https://k4ves9h0.api.sanity.io/v2021-06-07/data/mutate/production?returnIds=true`,
+        {
+          mutations: [
+            {
+              create: {
+                _type: "area",
+                createdAt: new Date().toISOString(),
+                name: Name,
+                email: Email,
+              },
+            },
+          ],
+        },
+        {
+          headers: {
+            "Content-type": "application/json",
+            Authorization: `Bearer ${tokenWithWriteAccess}`,
+          },
+        }
+      );
+    };
+    sendData();
+    setName("");
+    setEmail("");
   };
   return (
     <Popup
@@ -40,13 +79,17 @@ const AddressNotFound = (props) => {
               type="text"
               className={style.input}
               placeholder="Your Name"
+              value={Name}
+              onChange={handleNameChange}
             />
             <input
               type="text"
               className={style.input}
               placeholder="Your Email"
+              value={Email}
+              onChange={handleEmailChange}
             />
-            <button className={style.btn}>SUBSCRIBE NOW</button>
+            <button className={style.btn} onClick={submitHandler}>SUBSCRIBE NOW</button>
           </div>
         </div>
       )}
