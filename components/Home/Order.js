@@ -68,13 +68,14 @@ const Order = (props) => {
             className={style.input}
           />
         </div>
+        <VisibilitySensor onChange={onChange}>
+        <h3 className=" pb-7 bg-transparent w-[1vw] h-[1vh]"></h3>
+      </VisibilitySensor>
         <button className={style.btn} onClick={handleFormSubmit}>
           Check Coverage
         </button>
       </div>
-      <VisibilitySensor onChange={onChange}>
-        <h3 className=" pb-12 bg-transparent w-[1vh] h-[1vw]"></h3>
-      </VisibilitySensor>
+    
     </div>
   );
 };
