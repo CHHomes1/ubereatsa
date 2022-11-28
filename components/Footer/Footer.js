@@ -58,7 +58,7 @@ const Footer = () => {
             </li>
           </div>
           <div className={style.col2}>
-            <Link href="https://netdelivery.co.za/admin/privacy-policy">
+            <Link href="/privacy-policy">
               <li className={style.list1}>Privacy Policy</li>
             </Link>
             <li className={style.list1}>

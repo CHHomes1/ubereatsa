@@ -8,10 +8,10 @@ import NavDrawer from "./NavDrawer";
 import Image from "next/image";
 const HomeNav = ({ Visibility, FeaturedData }) => {
   const style = {
-    wrapper: `fixed flex items-center   ${
+    wrapper: ` fixed flex items-center   ${
       !Visibility ? "justify-center md:justify-between" : "justify-between"
     }   w-[100%] h-[10vh] md:px-12 ${
-      Visibility ? "bg-transparent" : "bg-white"
+      Visibility ? "bg-white" : "bg-white"
     }`,
     nameContainer: `${
       !Visibility ? "hidden sm:flex" : "flex"
