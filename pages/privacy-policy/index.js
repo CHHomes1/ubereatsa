@@ -1,18 +1,19 @@
 import React from "react";
 import HomeNav1 from "../../components/Nav/HomeNav1";
 import Footer from "../../components/Footer/Footer";
-
+import Link from "next/link";
 const style = {
   wrapper: "",
   small: "font-semibold text-xl md:text-2xl my-6",
   heading: "text-2xl md:text-3xl font-bold text-center my-12",
   para: "",
   para1: "mx-4 md:mx-6",
+  para2: "mx-4 md:mx-6 underline text-blue-600",
 };
 const index = () => {
   return (
     <div className={style.wrapper}>
-      <HomeNav1 visibility={true}/>
+      <HomeNav1 visibility={true} />
       <div className="py-24 md:py-36 w-[90%] md:w-[75%] mx-auto">
         <h2 className={style.heading}>Privacy Policy</h2>
         <h3 className={style.small}>Privacy Policy</h3>
@@ -54,10 +55,18 @@ const index = () => {
           Link to the privacy policy of third-party service providers used by
           the app
         </p>
-        <li className={style.para1}>Google Play Services</li>
-        <li className={style.para1}>Location</li>
-        <li className={style.para1}>Google Analytics for Firebase</li>
-        <li className={style.para1}>Firebase Crashlytics</li>
+        <Link href="https://policies.google.com/privacy">
+          <li className={style.para2}>Google Play Services</li>
+        </Link>
+        {/* <Link href=""> */}
+          <li className={style.para1}>Location</li>
+        {/* </Link> */}
+        <Link href="https://firebase.google.com/policies/analytics">
+          <li className={style.para2}>Google Analytics for Firebase</li>
+        </Link>
+        <Link href="https://firebase.google.com/support/privacy">
+          <li className={style.para2}>Firebase Crashlytics</li>
+        </Link>
         <h3 className={style.small}>Log Data</h3>
         <p className={style.para}>
           I want to inform you that whenever you use my Service, in a case of an
