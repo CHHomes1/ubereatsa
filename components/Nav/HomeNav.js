@@ -11,7 +11,7 @@ const HomeNav = ({ Visibility, FeaturedData }) => {
     wrapper: ` fixed flex items-center   ${
       !Visibility ? "justify-center md:justify-between" : "justify-between"
     }   w-[100%] h-[10vh] md:px-12 ${
-      Visibility ? "bg-white" : "bg-white"
+      Visibility ? "" : "bg-white"
     }`,
     nameContainer: `${
       !Visibility ? "hidden sm:flex" : "flex"

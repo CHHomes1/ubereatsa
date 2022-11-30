@@ -16,7 +16,7 @@ const index = () => {
   return (
     <div className={style.wrapper}>
       <Head>
-        <title>NetDelivery |  Privacy Policy</title>
+        <title>NetDelivery | Privacy Policy</title>
         <meta
           name="description"
           content="NetDelivery | Privacy Policy"
