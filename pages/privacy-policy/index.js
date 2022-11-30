@@ -23,7 +23,7 @@ const index = () => {
         />
         <link rel="icon" href="/favicon.png" />
       </Head>
-      ;
+
       <HomeNav1 visibility={true} />
       <div className="py-24 md:py-36 w-[90%] md:w-[75%] mx-auto">
         <h2 className={style.heading}>Privacy Policy</h2>
