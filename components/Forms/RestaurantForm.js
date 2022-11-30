@@ -23,7 +23,7 @@ const RestaurantForm = () => {
   const [SName, setSName] = useState("");
   const [SAddress, setSAddress] = useState("");
   const [Floor, setFloor] = useState("");
-  const [Country, setCountry] = useState("44");
+  const [Country, setCountry] = useState("27");
   const [Phone, setPhone] = useState("");
   const [Email, setEmail] = useState("");
   const [File, setFile] = useState("");

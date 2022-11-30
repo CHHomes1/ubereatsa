@@ -18,7 +18,7 @@ const DriverForm = () => {
   const [Phone, setPhone] = useState("");
   const [Email, setEmail] = useState("");
   const [Passport, setPassport] = useState("");
-  const [Country, setCountry] = useState("");
+  const [Country, setCountry] = useState("27");
   const [License, setLicense] = useState("");
   const [Pass, setPass] = useState("");
   const tokenWithWriteAccess =
