@@ -23,9 +23,9 @@ const HomeNav = ({ Visibility, FeaturedData }) => {
     eats: "font-semibold",
     btnContainer: "flex items-end justify-end w-[50%]",
     addressContainer: "",
-    addressTab: ` mx-4 flex w-auto md:w-[45vw] z-40 px-4 items-center justify-center bg-gray-200 rounded  `,
+    addressTab: ` mx-4 flex w-[70vw] md:w-[45vw] z-40 px-4 items-center justify-center bg-gray-200 rounded  `,
     input:
-      "placeholder:text-gray-800 outline-none py-2 md:py-3 bg-gray-200 mx-12 md:mx-2 w-[100%]",
+      "placeholder:text-gray-800 outline-none py-2 md:py-3 bg-gray-200 mx-1 md:mx-2 w-[100%] text-xs md:text-lg",
     loginContainer:
       "cursor-pointer hover:opacity-[0.9] flex items-center justify-center bg-white px-3 py-[0.7rem] md:px-5 py-[1.1rem] rounded-full mx-2 text-sm md:text-md md:mx-5",
     login: "",
