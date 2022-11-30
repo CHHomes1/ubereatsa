@@ -80,7 +80,7 @@ const HomeNav = ({ Visibility, FeaturedData }) => {
             <input
               type="text"
               value={Address}
-              placeholder="Enter delivery address"
+              placeholder=" Enter street name or suburb"
               onChange={handleAddressChange}
               className={style.input}
             />

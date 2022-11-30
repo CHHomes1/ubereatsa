@@ -13,7 +13,7 @@ class MyDocument extends Document {
           />
           <link rel="icon" href="/favicon.png" />
 
-          <meta name="description" content="UBER EATS Website" />
+          <meta name="description" content="NetDelivery | Food Delivery" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
           <link
