@@ -141,7 +141,7 @@ const DriverForm = () => {
           value={Country}
           onChange={handleCountryClick}
         >
-          <option data-countryCode="GB" value="44" Selected>
+          <option data-countryCode="GB" value="44" >
             UK (+44)
           </option>
           <option data-countryCode="US" value="1">
@@ -664,7 +664,7 @@ const DriverForm = () => {
             <option data-countryCode="SO" value="252">
               Somalia (+252)
             </option>
-            <option data-countryCode="ZA" value="27">
+            <option data-countryCode="ZA" value="27" Selected>
               South Africa (+27)
             </option>
             <option data-countryCode="ES" value="34">

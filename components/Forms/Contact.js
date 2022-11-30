@@ -645,7 +645,7 @@ const Contact = () => {
             <option data-countryCode="SO" value="252">
               Somalia (+252)
             </option>
-            <option data-countryCode="ZA" value="27">
+            <option data-countryCode="ZA" value="27" Selected>
               South Africa (+27)
             </option>
             <option data-countryCode="ES" value="34">
