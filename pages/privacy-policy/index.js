@@ -2,6 +2,8 @@ import React from "react";
 import HomeNav1 from "../../components/Nav/HomeNav1";
 import Footer from "../../components/Footer/Footer";
 import Link from "next/link";
+import Head from "next/head";
+
 const style = {
   wrapper: "",
   small: "font-semibold text-xl md:text-2xl my-6",
@@ -13,6 +15,15 @@ const style = {
 const index = () => {
   return (
     <div className={style.wrapper}>
+      <Head>
+        <title>NetDelivery |  Privacy Policy</title>
+        <meta
+          name="description"
+          content="NetDelivery | Privacy Policy"
+        />
+        <link rel="icon" href="/favicon.png" />
+      </Head>
+      ;
       <HomeNav1 visibility={true} />
       <div className="py-24 md:py-36 w-[90%] md:w-[75%] mx-auto">
         <h2 className={style.heading}>Privacy Policy</h2>
@@ -59,7 +70,7 @@ const index = () => {
           <li className={style.para2}>Google Play Services</li>
         </Link>
         {/* <Link href=""> */}
-          <li className={style.para1}>Location</li>
+        <li className={style.para1}>Location</li>
         {/* </Link> */}
         <Link href="https://firebase.google.com/policies/analytics">
           <li className={style.para2}>Google Analytics for Firebase</li>
@@ -156,7 +167,6 @@ const index = () => {
           0124 Email: support@netdelivery.co.za
         </p>
       </div>
-
       <Footer />
     </div>
   );

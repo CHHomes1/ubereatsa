@@ -10,7 +10,7 @@ export default function Main() {
     <div className={style.container}>
       <Head>
         <title>NetDelivery | Food Delivery, Order and Enjoy</title>
-        <meta name="description" content="An website for ubereats" />
+        <meta name="description" content="NetDelivery | Food Delviery, Order and Enjoy" />
         <link rel="icon" href="/favicon.png" />
       </Head>
       <Home />
